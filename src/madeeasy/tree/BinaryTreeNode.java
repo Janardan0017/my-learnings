@@ -1,3 +1,5 @@
+package madeeasy.tree;
+
 public class BinaryTreeNode {
 
 	public int data;

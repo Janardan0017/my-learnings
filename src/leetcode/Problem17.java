@@ -34,6 +34,7 @@ public class Problem17 {
                 result = temp;
             }
         }
+        return null;
     }
 
     public static void main(String[] args) {

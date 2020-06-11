@@ -1,3 +1,5 @@
+package madeeasy.LinkedList;
+
 public class ListNode {
 
 	public int data;

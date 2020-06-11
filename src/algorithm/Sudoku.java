@@ -1,7 +1,8 @@
-/* Java program for Sudoku generator */
-import java.lang.*; 
+package algorithm;
+import java.lang.*;
 
-public class Sudoku { 
+/* Java program for Sudoku generator */
+public class Sudoku {
 	int[] mat[]; 
 	int N; // number of columns/rows. 
 	int SRN; // square root of N 

@@ -1,3 +1,5 @@
+package madeeasy.LinkedList;
+
 import java.util.Scanner;
 
 public class Test {
@@ -34,7 +36,7 @@ public class Test {
 					break;
 				}
 				case "removeMatchingNode":{
-					ll.removeMatchingNode();
+					ll.removeMatchingNode(5);
 					break;
 				}
 				default: {

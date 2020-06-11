@@ -1,3 +1,5 @@
+package madeeasy.LinkedList;
+
 import java.util.Arrays;
 
 public class LinkedList {

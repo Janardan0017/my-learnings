@@ -1,3 +1,5 @@
+package sorting;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -29,9 +31,5 @@ public class Test {
 			}
 		}
 		return ar;
-	}
-
-	static int[] mergeSort(int[] ar){
-		
 	}
 }

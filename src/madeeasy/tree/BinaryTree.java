@@ -1,3 +1,5 @@
+package madeeasy.tree;
+
 import java.util.ArrayList;
 import java.util.Stack;
 
@@ -59,6 +61,3 @@ public class BinaryTree {
 		return res;
 	}
 }
-2
-3
-1

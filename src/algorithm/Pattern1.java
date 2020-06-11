@@ -1,3 +1,5 @@
+package algorithm;
+
 public class Pattern1 {
 	public static void main(String[] args){
 		int n = 6;
@@ -9,6 +11,6 @@ public class Pattern1 {
         	sb.append("\n");
         }
         System.out.println(sb);
-        System.out.println(getName());
+        System.out.println();
 	}
 }

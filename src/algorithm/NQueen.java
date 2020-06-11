@@ -1,13 +1,11 @@
+package algorithm;
+
+import java.util.Scanner;
+
 public class NQueen {
 
 	public static void solveNQueen(int n, int[][] ar){
-		if(i == n){
-			got a solution
-		}else {
-			for(int i=0; i<n; i++){
-				
-			}
-		}
+
 	}
 
 	public static boolean isValidPosition(int i, int j, int n, int[][] ar){
@@ -45,6 +43,6 @@ public class NQueen {
 	public static void main(String[] args){
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt();
-		solveNQueen(n);
+		solveNQueen(n, new int[1][1]);
 	}
 }
