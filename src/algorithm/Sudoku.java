@@ -3,7 +3,7 @@ import java.lang.*;
 
 /* Java program for Sudoku generator */
 public class Sudoku {
-	int[] mat[]; 
+	int[][] mat;
 	int N; // number of columns/rows. 
 	int SRN; // square root of N 
 	int K; // No. Of missing digits 
@@ -126,7 +126,7 @@ public class Sudoku {
 		} 
 		else if (i < N-SRN) 
 		{ 
-			if (j==(int)(i/SRN)*SRN) 
+			if (j== (i/SRN) *SRN)
 				j = j + SRN; 
 		} 
 		else

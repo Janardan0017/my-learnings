@@ -6,7 +6,7 @@ public class Problem2 {
 		if(A.length == 1 || i == 1){
 			return true;
 		}
-		return (A[i-1] < A[i-2] ? false : solve(A, i-1));
+		return (A[i - 1] >= A[i - 2] && solve(A, i - 1));
 	}
 
 	public static void main(String[] args){

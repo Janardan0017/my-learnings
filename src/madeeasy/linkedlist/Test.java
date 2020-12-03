@@ -1,4 +1,4 @@
-package madeeasy.LinkedList;
+package madeeasy.linkedlist;
 
 import java.util.Scanner;
 

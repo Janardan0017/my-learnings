@@ -1,9 +1,12 @@
 package algorithm;
 
+import java.util.Random;
 import java.util.Set;
 import java.util.HashSet;
 
 public class MagicSquare {
+
+	final static Random random = new Random();
 
 	public static void main(String[] args){
 
@@ -48,18 +51,16 @@ public class MagicSquare {
 			if(sum != 15)
 				return false;
 		}
-		// digonal check
-		int digonal1 = box[0][0] + box[1][1] + box[2][2];
-		if(digonal1 != 15)
+		// diagonal check
+		int diagonal1 = box[0][0] + box[1][1] + box[2][2];
+		if(diagonal1 != 15)
 				return false;
-		int digonal2 = box[0][2] + box[1][1] + box[2][0];
-		if(digonal2 != 15)
-				return false;
-		return true;
+		int diagonal2 = box[0][2] + box[1][1] + box[2][0];
+		return diagonal2 == 15;
 	}
 
 	static int getRandomNumber(Set<Integer> set){
-		int n = (int) (Math.random()*10);
+		int n = random.nextInt();
 		if(n > 0 && !set.contains(n))
 			return n;
 		else

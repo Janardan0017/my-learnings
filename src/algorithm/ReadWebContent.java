@@ -1,10 +1,6 @@
 package algorithm;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 
@@ -12,7 +8,7 @@ import java.net.URL;
  * Created by emp350 on 5/06/20
  */
 public class ReadWebContent {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         method1();
     }
 
@@ -24,7 +20,7 @@ public class ReadWebContent {
             BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
             String str;
             while ((str = in.readLine()) != null) {
-                str = in.readLine().toString();
+                str = in.readLine();
                 System.out.println(str);
         /*str will get each time the new line, if you want to store the whole text in str
            you can use concatenation (str+ = in.readLine().toString())*/
@@ -32,13 +28,5 @@ public class ReadWebContent {
             in.close();
         } catch (Exception e) {
         }
-    }
-
-    // read only content
-    public static void method2() throws IOException {
-        String URL = "https://jsoup.org/download";
-        Document doc = Jsoup.connect(URL).get();
-        String text = doc.body().text();
-        System.out.println(text);
     }
 }

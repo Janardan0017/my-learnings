@@ -1,8 +1,8 @@
 package stack;
 
 public class Edge {
-    private Node nodeA;
-    private Node nodeB;
+    private final Node nodeA;
+    private final Node nodeB;
 
     public Edge(Node nodeA, Node nodeB) {
         this.nodeA = nodeA;
