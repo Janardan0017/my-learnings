@@ -18,8 +18,8 @@ public class Problem69 {
     public static void getCommonElement(ListNode head1, ListNode head2) {
 
         while (head1 != null && head2 != null) {
-            int x = head1.data;
-            int y = head2.data;
+            int x = head1.val;
+            int y = head2.val;
             if (x == y) {
                 System.out.println(x);
                 head1 = head1.next;

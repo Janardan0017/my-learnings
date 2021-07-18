@@ -103,13 +103,13 @@ public class LinkedList {
         if (head == null) {
             return;
         }
-        if (head.data == data) {
+        if (head.val == data) {
             head = head.next;
             return;
         }
         ListNode prev = head, current = head.next;
         while (current != null) {
-            if (current.data == data) {
+            if (current.val == data) {
                 prev.next = current.next;
                 current = null;
                 length--;
@@ -130,7 +130,7 @@ public class LinkedList {
         StringBuilder sb = new StringBuilder("[");
         ListNode temp = head;
         while (temp != null) {
-            sb.append(temp.data);
+            sb.append(temp.val);
             temp = temp.next;
             if (temp != null)
                 sb.append(", ");

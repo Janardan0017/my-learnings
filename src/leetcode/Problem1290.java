@@ -21,7 +21,7 @@ public class Problem1290 {
         int sum = 0;
         while (temp != null) {
             len--;
-            if (temp.data == 1) {
+            if (temp.val == 1) {
                 sum += Math.pow(2, len);
             }
             temp = temp.next;
