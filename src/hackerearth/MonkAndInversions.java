@@ -11,7 +11,6 @@ public class MonkAndInversions {
         while(T-- > 0) {
             String[] nk = s.nextLine().trim().split(" ");
             int n = Integer.parseInt(nk[0]);
-            int[][] arr = new int[n][n];
             int[] ar = Arrays.stream(s.nextLine().trim().split(" "))
                     .mapToInt(Integer::parseInt).toArray();
 
