@@ -10,7 +10,6 @@ public class Test {
     private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
     public static void main(String[] args) {
-//        System.out.println(getDifference(1616127494000L, System.currentTimeMillis()));
 //        System.out.println(getDifference(1617596294000L, System.currentTimeMillis()));
 //        System.out.println(getDifference(1618201094000L, System.currentTimeMillis()));
 //        System.out.println(getDifference(1618373894000L, System.currentTimeMillis()));
