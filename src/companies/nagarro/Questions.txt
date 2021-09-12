@@ -1,0 +1,156 @@
+What are constructors?
+
+What is use of static keyword?
+Ans: In Java, static keyword is mainly used for memory management.
+It can be used with variables, methods, blocks and nested classes.
+It is a keyword which is used to share the same variable or method of a given class.
+Basically, static is used for a constant variable or a method that is same for every instance of a class
+
+Use of new keyword?
+it instantiates a class by allocating memory for a new object and returning a reference to that memory
+
+Difference between data abstraction and data hiding?
+Data hiding is the process that ensures exclusive data access to class members and provides object
+integrity by preventing unintended or intended changes. Abstraction, on the other hand, is an OOP
+concept that hides the implementation details and shows only the functionality to the user.
+
+Do you know Heap?
+Heap is the memory area where objects are stored
+
+What is inheritance? give real life example
+Acquiring the property of a class into another class. Humans are real example.
+
+what is abstraction? give real life example
+Hiding the implementation and showing only essential part. Car is real life example.
+
+how can you achieve abstraction?
+Using abstract class and interface.
+
+Note: A concrete method means, the method has complete definition but it can be overridden in the inherited class
+
+Solid principle
+https://www.educative.io/edpresso/what-are-the-solid-principles-in-java?aid=5082902844932096&utm_source=google&utm_medium=cpc&utm_campaign=edpresso-dynamic&utm_term=&utm_campaign=Dynamic+-+Edpresso&utm_source=adwords&utm_medium=ppc&hsa_acc=5451446008&hsa_cam=8092184362&hsa_grp=86276435689&hsa_ad=397226000870&hsa_src=g&hsa_tgt=aud-477877424876:dsa-837376625453&hsa_kw=&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjwssyJBhDXARIsAK98ITS7a00tchJzhJ-rBovsk-3aCuC_0g_rP2ol0brCFO2wyuqYnMTHNa8aAq81EALw_wcB
+1.Single Responsibility Principle: Each class should be responsible for a single part or functionality of the system.
+2.Open-Closed Principle:	Software components should be open for extension, but not for modification.
+3.Liskov Substitution Principle:	Objects of a superclass should be replaceable with objects of its subclasses without breaking the system.
+4.Interface Segregation Principle:	No client should be forced to depend on methods that it does not use.
+5.Dependency Inversion Principle:	High-level modules should not depend on low-level modules, both should depend on abstractions.
+
+output of queries in SQL
+
+Dependency Injection
+
+SQL Injection
+In SQL Injection, hackers append additional information within input boxes and can create, read, update,
+or delete data within the database. SQL Injection is the most common type of injection attack
+https://www.educative.io/edpresso/what-is-sql-injection?aid=5082902844932096&utm_source=google&utm_medium=cpc&utm_campaign=edpresso-dynamic&utm_term=&utm_campaign=Dynamic+-+Edpresso&utm_source=adwords&utm_medium=ppc&hsa_acc=5451446008&hsa_cam=8092184362&hsa_grp=86276435689&hsa_ad=397226000870&hsa_src=g&hsa_tgt=aud-576728509172:dsa-837376625453&hsa_kw=&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjwssyJBhDXARIsAK98ITRNzH98kGqj62VaUMSisxWUppeQhl08EeqMbRwOqJpgU0axVUAVq_4aApZcEALw_wcB
+
+Cluster indexes ,Transactions , Cursors
+
+issue when HTTP delete replace with HTTP get , Authentication Authorization Web API
+Task , Thread , async and await .
+sql server table question
+
+Abstract class vs Interface
+abstract class is used for 0 to 100% abstraction and interface is used for 100% abstraction
+
+Hashmap internal working and concept of hashing
+
+Questions were mostly around JAVA, Spring Boot, hibernate, multithreading.
+
+Java 8 streams API along with predicates and consumers
+
+Types of exchanges in rabbitmq
+
+Circuit breaker design pattern and its use case
+
+Java, hibernate
+
+OOPS, Core Java(Collections, threading), design pattern, spring core, spring boot. hibernate
+
+OOP's concept , Basic programming ,Data Structure
+
+What is N+1 problem in hibernate?
+
+what is singleton?
+
+One question related to hashing
+
+Tell me try catch finally block
+
+static keyword
+final keyword and its use
+where object created in java .
+Alter and Update command in SQL
+Types of joins in SQL ? Explain them each briefly ?
+Design patterns
+Difference between data hiding and abstraction.
+What is the Internal Implementation of HashMap
+Describe any advanced data structure
+String Builder class
+Write a SQL query to get sum of the salary of all the employees.
+What is the use of embeddable in Hibernate ?
+What is best sorting algorithm according to you. And why this is best algorithm?
+Do you know Quick Short?
+Complexity of Quick Short
+Question on DS,OOPS, your project and asked me to write a code on anagram.
+In which memory are objects stores?
+Doubly Linked List. Why do we use it & its use case.
+How do we achieve Encapsulation
+Why do we use Pure Virtual function.
+Remove special chars from a string
+oops based question, Dbms , normalization, joins
+lambda expressions , multithreading , Collections,Spring boot
+RESTFul vs REST
+Authentication & Authorization
+Explain Sorting Algorithm (Any one which you know)?
+What is 2NF in DBMS?
+Program to find if all the words from string1 are present in string2 in same order.
+what is sql and define select query
+How the exceptions are handled in java?
+How will you decide which sorting algorithm to use if a array is given?
+They asked me a question on Dynamic Programming and Stack.
+Time complexities of basic algorithms.
+Program to print a matrix in spiral form.
+In last question , an integer n was given , task was to print the pattern. Example given n=5,
+1 2 3 4 5
+16 17 18 19 6
+15 24 25 20 7
+14 23 22 21 8
+13 12 11 10 9
+Time complexity of merge sort and quick?
+Nth Prime Number , Max frequency from array , encrypt text with replacing each letter by condition.
+Search and sort algorithms, trees and optimization
+Given an unsorted list of repeated elements in an array, Find the element with maximum frequency.
+Given a string containing characters and brackets, find if the brackets are paired in the string.
+(Little Tricky) Given a set of integers, find the third maximum sum of two elements from the set.
+Sum of subarray in a given array
+Substring having unique characters.
+print all continuous subarray with sum equal to zero in an array
+the longest increasing substring from two given strings
+given sorted array and a number, find closest 5 elements from the array
+Frequency of number in array
+Find nagaroo from a string in a particular order
+Find all the sets from an array consisting of 1-9 numbers which sums up to 10
+Implement custom data structure for queue like feature.
+Algorithms for searching and sorting.
+How will you implement your own data structure model of existing ones.
+sort the rows in the matrix according to the respective 2nd column elements
+given an array, we have to find out whether we can create a Fibonacci or not?
+Sort matrix based on column, sorting with absolute value, and last one was substring pallindrome identification
+How can you traverse a max. heap tree?
+Convert max. heap tree to min. heap tree?
+What are differences between Stacks and Queues? How do you know when to apply either?
+find all substrings containing distinct letter.
+Given a sorted list find closest 5no. to a given no.
+given two sorted array print consecutive no
+Question on dynamic Programming
+Remove redundant elements from an array in minimum time and space complexity.
+Display the words and their frequency of occurrence in a given sentence. Again, minimize the complexities.
+find the 5 largest element ,given 3 arrays.
+Write good quality code to crack this round (Even your approach could guarantee you a seat in the next round.
+they asked me to reduce the complexity of my code .
+given a date in the format 12 oct 1992 print the next date->13 oct 1992
+whether number is Fibonacci or not. in n complexity
+check whether a given number binary representation is palindrome or not?
+permute the given string? e.g. ABC output is ABC, ACB, BAC, BCA, CAB, CBA.
