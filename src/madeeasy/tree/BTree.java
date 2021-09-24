@@ -5,11 +5,11 @@ package madeeasy.tree;
  */
 public interface BTree {
 
-    static TreeNode add(TreeNode root, int val) {
+    static TreeNode<Integer> add(TreeNode<Integer> root, int val) {
         // if tree has no node then create the root node
         if (root == null)
-            return new TreeNode(val);
-        TreeNode temp = root;
+            return new TreeNode<Integer>(val);
+        TreeNode<Integer> temp = root;
         while (temp != null) {
             if (val < temp.getVal()) {
                 temp = temp.getLeft();

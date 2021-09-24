@@ -1,13 +1,13 @@
 package companies.accolite;
 
 
-import madeeasy.linkedlist.LinkedList;
+import madeeasy.linkedlist.MyLinkedList;
 import madeeasy.linkedlist.ListNode;
 
 public class PrintReverseOfLinkedList {
 
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
+        MyLinkedList<Integer> list = new MyLinkedList<>();
         list.add(1);
         list.add(2);
         list.add(3);
@@ -16,7 +16,7 @@ public class PrintReverseOfLinkedList {
         printReverse(list.getHead());
     }
 
-    public static void printReverse(ListNode head) {
+    public static void printReverse(ListNode<Integer> head) {
         if(head == null)
             return;
         printReverse(head.next);

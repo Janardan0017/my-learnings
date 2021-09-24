@@ -2,18 +2,18 @@ package madeeasy.tree;
 
 import java.util.*;
 
-public class Tree {
+public class Tree<T> {
 
-    private TreeNode root;
+    private TreeNode<T> root;
 
     public Tree() {
     }
 
     public Tree(int val) {
-        root = new TreeNode(val);
+        root = new TreeNode<T>(val);
     }
 
-    public void preOrder(TreeNode root) {
+    public void preOrder(TreeNode<T> root) {
         if (root != null) {
             System.out.println(root.getVal());
             preOrder(root.getLeft());
@@ -21,15 +21,15 @@ public class Tree {
         }
     }
 
-    public List<Integer> preOrderTraversal(TreeNode root) {
+    public List<Integer> preOrderTraversal(TreeNode<T> root) {
         List<Integer> res = new ArrayList<>();
         if (root == null) {
             return res;
         }
-        Stack<TreeNode> stack = new Stack<>();
+        Stack<TreeNode<T>> stack = new Stack<>();
         stack.push(root);
         while (!stack.isEmpty()) {
-            TreeNode temp = stack.pop();
+            TreeNode<T> temp = stack.pop();
             res.add(temp.getVal());
             if (temp.getRight() != null) {
                 stack.push(temp.getRight());
@@ -41,7 +41,7 @@ public class Tree {
         return res;
     }
 
-    public void inOrder(TreeNode root) {
+    public void inOrder(TreeNode<T> root) {
         if (root != null) {
             preOrder(root.getLeft());
             System.out.println(root.getVal());
@@ -49,15 +49,15 @@ public class Tree {
         }
     }
 
-    public List<Integer> inOrderTraversal(TreeNode root) {
+    public List<Integer> inOrderTraversal(TreeNode<T> root) {
         List<Integer> res = new ArrayList<>();
         if (root == null) {
             return res;
         }
-        Deque<TreeNode> stack = new ArrayDeque<>();
+        Deque<TreeNode<T>> stack = new ArrayDeque<>();
         stack.push(root);
         while (!stack.isEmpty()) {
-            TreeNode temp = stack.pop();
+            TreeNode<T> temp = stack.pop();
             res.add(temp.getVal());
             if (temp.getRight() != null) {
                 stack.push(temp.getRight());
@@ -69,7 +69,7 @@ public class Tree {
         return res;
     }
 
-    public TreeNode getRoot() {
+    public TreeNode<T> getRoot() {
         return root;
     }
 }

@@ -1,6 +1,6 @@
 package leetcode;
 
-import madeeasy.linkedlist.LinkedList;
+import madeeasy.linkedlist.MyLinkedList;
 import madeeasy.linkedlist.ListNode;
 
 /**
@@ -9,12 +9,12 @@ import madeeasy.linkedlist.ListNode;
 //https://leetcode.com/problems/reverse-linked-list/
 public class Problem206 {
 
-    public static ListNode reverseList(ListNode head) {
+    public static ListNode<Integer> reverseList(ListNode<Integer> head) {
         if(head == null)
             return null;
-        ListNode prev = null;
-        ListNode temp = head;
-        ListNode next = head.next;
+        ListNode<Integer> prev = null;
+        ListNode<Integer> temp = head;
+        ListNode<Integer> next = head.next;
         while(next != null){
             temp.next = prev;
             head = temp;
@@ -30,7 +30,7 @@ public class Problem206 {
     }
 
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
+        MyLinkedList<Integer> list = new MyLinkedList<>();
         for(int i=0; i<14; i++){
             list.add(i);
         }

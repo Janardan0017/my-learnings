@@ -1,7 +1,7 @@
 package leetcode;
 
 
-import madeeasy.linkedlist.LinkedList;
+import madeeasy.linkedlist.MyLinkedList;
 import madeeasy.linkedlist.ListNode;
 
 /**
@@ -10,9 +10,9 @@ import madeeasy.linkedlist.ListNode;
 //https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
 public class Problem1290 {
 
-    public static int getDecimalValue(ListNode head) {
+    public static int getDecimalValue(ListNode<Integer> head) {
         int len = 0;
-        ListNode temp = head;
+        ListNode<Integer> temp = head;
         while (temp != null) {
             len++;
             temp = temp.next;
@@ -30,7 +30,7 @@ public class Problem1290 {
     }
 
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
+        MyLinkedList<Integer> list = new MyLinkedList<>();
         for(int i=0; i<30; i++){
             list.add(i%2);
         }

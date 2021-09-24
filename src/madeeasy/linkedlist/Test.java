@@ -6,7 +6,7 @@ public class Test {
 
 	public static void main(String[] args){
 		Scanner in = new Scanner(System.in);
-		LinkedList ll = new LinkedList();
+		MyLinkedList<Integer> ll = new MyLinkedList<>();
 		System.out.println("Select option: 1-insertAtBegin\n2-insertAtEnd\n3-insert at position\n4-removeFromBegin\n5-removeFromEnd\n6-removeMatchingNode");
 		String option = in.next();
 		while(!option.equals("q")){

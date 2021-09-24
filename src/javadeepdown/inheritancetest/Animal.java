@@ -7,4 +7,12 @@ public class Animal {
     public void voice() {
         System.out.println("Unknown......");
     }
+
+    private void animalPrivateMethod() {
+        System.out.println("Animal private method");
+    }
+
+    public static void animalStaticMethod() {
+        System.out.println("Animal static method");
+    }
 }

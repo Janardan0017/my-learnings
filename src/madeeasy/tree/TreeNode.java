@@ -1,10 +1,10 @@
 package madeeasy.tree;
 
-public class TreeNode {
+public class TreeNode<T> {
 
     private int val;
-    private TreeNode left;
-    private TreeNode right;
+    private TreeNode<T> left;
+    private TreeNode<T> right;
 
     public TreeNode() {
     }
@@ -21,28 +21,24 @@ public class TreeNode {
         this.val = val;
     }
 
-    public TreeNode getLeft() {
+    public TreeNode<T> getLeft() {
         return left;
     }
 
-    public void setLeft(TreeNode left) {
+    public void setLeft(TreeNode<T> left) {
         this.left = left;
     }
 
-    public TreeNode getRight() {
+    public TreeNode<T> getRight() {
         return right;
     }
 
-    public void setRight(TreeNode right) {
+    public void setRight(TreeNode<T> right) {
         this.right = right;
     }
 
     @Override
     public String toString() {
-        return "TreeNode{" +
-                "val=" + val +
-                ", left=" + left +
-                ", right=" + right +
-                '}';
+        return "TreeNode{" + val + "," + left + ", " + right + "}\n";
     }
 }

@@ -1,9 +1,9 @@
 package madeeasy.linkedlist;
 
-public class ListNode {
+public class ListNode<T> {
 
     public int val;
-    public ListNode next;
+    public ListNode<T> next;
 
     public ListNode() {
     }
@@ -12,7 +12,7 @@ public class ListNode {
         this.val = val;
     }
 
-    public ListNode(int val, ListNode next) {
+    public ListNode(int val, ListNode<T> next) {
         this.val = val;
         this.next = next;
     }

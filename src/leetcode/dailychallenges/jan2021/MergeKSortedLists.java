@@ -1,6 +1,6 @@
 package leetcode.dailychallenges.jan2021;
 
-import madeeasy.linkedlist.LinkedList;
+import madeeasy.linkedlist.MyLinkedList;
 import madeeasy.linkedlist.ListNode;
 
 /**
@@ -8,21 +8,21 @@ import madeeasy.linkedlist.ListNode;
  */
 public class MergeKSortedLists {
 
-    public static ListNode mergeTwoList(ListNode head1, ListNode head2) {
+    public static ListNode<Integer> mergeTwoList(ListNode<Integer> head1, ListNode<Integer> head2) {
         if (head1 == null)
             return head2;
         if (head2 == null)
             return head1;
         if (head1.val > head2.val) {
-            ListNode temp = head1;
+            ListNode<Integer> temp = head1;
             head1 = head2;
             head2 = temp;
         }
-        ListNode previous = head1;
-        ListNode current = head1.next;
+        ListNode<Integer> previous = head1;
+        ListNode<Integer> current = head1.next;
         while (current != null && head2 != null) {
             if (head2.val < current.val) {
-                ListNode temp = head2;
+                ListNode<Integer> temp = head2;
                 head2 = head2.next;
                 previous.next = temp;
                 temp.next = current;
@@ -38,21 +38,21 @@ public class MergeKSortedLists {
     }
 
     public static void main(String[] args) {
-        LinkedList list1 = new LinkedList();
+        MyLinkedList<Integer> list1 = new MyLinkedList<>();
         list1.add(1);
         for (int i = 2; i < 13; i++) {
             list1.add(i);
         }
 
-        LinkedList list2 = new LinkedList();
+        MyLinkedList<Integer> list2 = new MyLinkedList<>();
         for (int i = 13; i < 20; i++) {
             list2.add(i);
         }
-        ListNode result = mergeTwoList(list2.getHead(), list1.getHead());
+        ListNode<Integer> result = mergeTwoList(list2.getHead(), list1.getHead());
         System.out.println(getValues(result));
     }
 
-    public static String getValues(ListNode head) {
+    public static String getValues(ListNode<Integer> head) {
         if (head == null)
             System.out.println("[]");
         StringBuilder stringBuilder = new StringBuilder("[");

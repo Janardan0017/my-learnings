@@ -16,11 +16,11 @@ public class Problem44 {
 	}
 
 	public static void getJosephusPosition(int n, int m) {
-		ListNode p, q;
-		p = new ListNode(1);
+		ListNode<Integer> p, q;
+		p = new ListNode<>(1);
 		q = p;
 		for(int i=2; i<=n; i++) {
-			p.next = new ListNode(i);
+			p.next = new ListNode<>(i);
 			p = p.next;
 		}
 		p.next = q;
