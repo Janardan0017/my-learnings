@@ -41,7 +41,7 @@ class SingletonClass {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException  {
+    protected Object clone() throws CloneNotSupportedException {
         throw new CloneNotSupportedException();
     }
 }

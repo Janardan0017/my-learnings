@@ -5,8 +5,10 @@ public class MethodOverloadingTest {
     public static void main(String[] args) {
         MethodOverloading methodOverloading = new MethodOverloading();
         System.out.println(methodOverloading.sum(1, 2));
-        System.out.println(methodOverloading.sum(1L, 2L));;
-        System.out.println(methodOverloading.sum("Janardan ", "chaudhary"));;
+        System.out.println(methodOverloading.sum(1L, 2L));
+        ;
+        System.out.println(methodOverloading.sum("Janardan ", "chaudhary"));
+        ;
     }
 }
 

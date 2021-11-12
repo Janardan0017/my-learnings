@@ -8,7 +8,7 @@ public class LinkedListProblem1 {
 
     public static void main(String[] args) {
         MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
-        for(int i = 1; i<11; i++) {
+        for (int i = 1; i < 11; i++) {
             myLinkedList.add(i);
         }
         System.out.println(myLinkedList);
@@ -25,15 +25,15 @@ public class LinkedListProblem1 {
         while (current != null) {
             ListNode<Integer> temp = current;
             current = current.next;
-            if(temp.val % 2 == 0) {
-                if(even == null) {
+            if (temp.val % 2 == 0) {
+                if (even == null) {
                     even = temp;
-                }else {
+                } else {
                     even.next = temp;
                     even = even.next;
                 }
             } else {
-                if(odd == null) {
+                if (odd == null) {
                     odd = temp;
                 } else {
                     odd.next = temp;

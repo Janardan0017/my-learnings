@@ -1,15 +1,19 @@
-import java.util.*;
+package madeeasy.RecursionAndBacktracking;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class NextPermutation {
-	
-	public static void main(String[] args) {
-        List<Integer> a = Arrays.asList(new Integer[] {1, 2, 3, 4});
+
+    public static void main(String[] args) {
+        List<Integer> a = Arrays.asList(new Integer[]{1, 2, 3, 4});
         do {
             System.out.println(a);
         } while (nextPerm(a));
     }
 
-	public static boolean nextPerm(List<Integer> a) {
+    public static boolean nextPerm(List<Integer> a) {
         int i = a.size() - 2;
         while (i >= 0 && a.get(i) >= a.get(i + 1))
             i--;

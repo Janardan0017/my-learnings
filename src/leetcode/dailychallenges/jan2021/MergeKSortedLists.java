@@ -1,7 +1,7 @@
 package leetcode.dailychallenges.jan2021;
 
-import madeeasy.linkedlist.MyLinkedList;
 import madeeasy.linkedlist.ListNode;
+import madeeasy.linkedlist.MyLinkedList;
 
 /**
  * Created for interview-preparation on 25/01/21
@@ -32,7 +32,7 @@ public class MergeKSortedLists {
                 current = current.next;
             }
         }
-        if(head2 != null)
+        if (head2 != null)
             previous.next = head2;
         return head1;
     }

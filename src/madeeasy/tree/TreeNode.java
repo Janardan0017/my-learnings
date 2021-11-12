@@ -2,22 +2,22 @@ package madeeasy.tree;
 
 public class TreeNode<T> {
 
-    private int val;
+    private T val;
     private TreeNode<T> left;
     private TreeNode<T> right;
 
     public TreeNode() {
     }
 
-    public TreeNode(int val) {
+    public TreeNode(T val) {
         this.val = val;
     }
 
-    public int getVal() {
+    public T getVal() {
         return val;
     }
 
-    public void setVal(int val) {
+    public void setVal(T val) {
         this.val = val;
     }
 

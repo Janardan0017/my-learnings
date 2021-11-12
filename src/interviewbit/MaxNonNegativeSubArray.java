@@ -16,11 +16,11 @@ public class MaxNonNegativeSubArray {
         int l = 0;
         int r = -1;
         int sum = 0;
-        while(i < A.size()) {
-            if(A.get(i) >= 0) {
+        while (i < A.size()) {
+            if (A.get(i) >= 0) {
                 sum += A.get(i);
             } else {
-                if(sum > max) {
+                if (sum > max) {
                     max = sum;
                     l = r + 1;
                     r = i;
@@ -29,12 +29,12 @@ public class MaxNonNegativeSubArray {
             }
             i++;
         }
-        if(sum > max) {
+        if (sum > max) {
             l = r + 1;
             r = i;
         }
         ArrayList<Integer> list = new ArrayList<>();
-        while(l < r) {
+        while (l < r) {
             list.add(A.get(l));
             l++;
         }

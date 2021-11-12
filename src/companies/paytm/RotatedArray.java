@@ -7,9 +7,9 @@ public class RotatedArray {
         int i = 2000;
         int k;
         while (i-- > 0) {
-            k = (int)(Math.random() * 1000);
+            k = (int) (Math.random() * 1000);
             System.out.print(ar[k % 6]);
-            if(i%k == 0)
+            if (i % k == 0)
                 System.out.println();
         }
     }

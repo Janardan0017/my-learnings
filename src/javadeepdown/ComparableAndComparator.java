@@ -1,15 +1,17 @@
 package javadeepdown;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public class ComparableAndComparator {
 
     public static void main(String[] args) {
-        Contract c1 = new Contract(4,"DDD", LocalDateTime.now(),false);
-        Contract c2 = new Contract(2,"BBB", LocalDateTime.now(),false);
-        Contract c3 = new Contract(1,"AAA", LocalDateTime.now(),false);
-        Contract c4 = new Contract(3,"CCC", LocalDateTime.now(),false);
+        Contract c1 = new Contract(4, "DDD", LocalDateTime.now(), false);
+        Contract c2 = new Contract(2, "BBB", LocalDateTime.now(), false);
+        Contract c3 = new Contract(1, "AAA", LocalDateTime.now(), false);
+        Contract c4 = new Contract(3, "CCC", LocalDateTime.now(), false);
         List<Contract> list = new ArrayList<>();
         list.add(c1);
         list.add(c2);

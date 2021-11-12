@@ -9,7 +9,7 @@ public class GetTreeHeight {
     }
 
     public static int getHeight(TreeNode<Integer> root) {
-        if(root == null)
+        if (root == null)
             return 0;
         else {
             int leftHeight = getHeight(root.getLeft());

@@ -1,6 +1,6 @@
 package javadeepdown.java8;
 
-public class MyClass extends Abstract1 implements Interface1, Interface2{
+public class MyClass extends Abstract1 implements Interface1, Interface2 {
 
     public MyClass(int id, String name, String phone) {
         super(id, name, phone);

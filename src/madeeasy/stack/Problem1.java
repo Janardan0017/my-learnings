@@ -26,7 +26,7 @@ public class Problem1 {
 
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
-        while(!input.equalsIgnoreCase("Exit")){
+        while (!input.equalsIgnoreCase("Exit")) {
             System.out.println(isParenthesisBalanced(input));
             input = in.nextLine();
         }

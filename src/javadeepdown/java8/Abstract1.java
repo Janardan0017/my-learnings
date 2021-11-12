@@ -8,7 +8,7 @@ public abstract class Abstract1 {
     private String name;
     private String phone;
 
-    public Abstract1(int id, String name, String phone) {
+    protected Abstract1(int id, String name, String phone) {
         this.id = id;
         this.name = name;
         this.phone = phone;

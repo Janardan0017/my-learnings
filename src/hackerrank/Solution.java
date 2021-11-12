@@ -1,12 +1,10 @@
 package hackerrank;
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 class Result {
 
@@ -20,7 +18,7 @@ class Result {
      */
 
     public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
-    // Write your code here
+        // Write your code here
         return null;
     }
 

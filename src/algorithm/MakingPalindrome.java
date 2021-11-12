@@ -23,7 +23,7 @@ public class MakingPalindrome {
         String longestPalindrome = "";
         for (int i = 0; i < str.length(); i++) {
             String temp = str.replace(str.charAt(i), '\0');
-            if(isPalindrome(temp)){
+            if (isPalindrome(temp)) {
 
             }
         }

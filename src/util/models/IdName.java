@@ -5,7 +5,8 @@ public class IdName {
     public long id;
     public String name;
 
-    public IdName() {}
+    public IdName() {
+    }
 
     public IdName(long id, String name) {
         this.id = id;

@@ -11,7 +11,6 @@ import java.util.stream.IntStream;
 public class Day29 {
 
 
-
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(bufferedReader.readLine().trim());
@@ -21,7 +20,7 @@ public class Day29 {
                 String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
                 String firstName = firstMultipleInput[0];
                 String emailID = firstMultipleInput[1];
-                if(emailID.endsWith("@gmail.com")) {
+                if (emailID.endsWith("@gmail.com")) {
                     names.add(firstName);
                 }
             } catch (IOException ex) {

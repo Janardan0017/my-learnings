@@ -1,7 +1,6 @@
 package hackerrank;
 
 import java.time.YearMonth;
-import java.util.Scanner;
 
 public class NestedLogic {
 
@@ -9,7 +8,8 @@ public class NestedLogic {
 //        Scanner in = new Scanner(System.in);
         String dmy1 = "1 6 2015";
         String dmy2 = "6 6 2015";
-        System.out.println(getFine(dmy1, dmy2));;
+        System.out.println(getFine(dmy1, dmy2));
+        ;
 
     }
 
@@ -39,7 +39,7 @@ public class NestedLogic {
         int y1y2 = y1 - y2;
 
         int fine = 0;
-        if(y1y2 < 0)
+        if (y1y2 < 0)
             return 0;
         if (y1y2 > 0) {
             fine = 10000;

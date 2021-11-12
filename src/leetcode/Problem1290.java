@@ -1,8 +1,8 @@
 package leetcode;
 
 
-import madeeasy.linkedlist.MyLinkedList;
 import madeeasy.linkedlist.ListNode;
+import madeeasy.linkedlist.MyLinkedList;
 
 /**
  * Created for interview-preperation on 11/06/20
@@ -31,8 +31,8 @@ public class Problem1290 {
 
     public static void main(String[] args) {
         MyLinkedList<Integer> list = new MyLinkedList<>();
-        for(int i=0; i<30; i++){
-            list.add(i%2);
+        for (int i = 0; i < 30; i++) {
+            list.add(i % 2);
         }
         System.out.println(list);
         System.out.println(list.length());

@@ -6,7 +6,7 @@ public class Test2 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int x = in.nextInt();
-        while(x != -1) {
+        while (x != -1) {
             System.out.println(get3XPlusOne(x));
             x = in.nextInt();
         }
@@ -15,11 +15,11 @@ public class Test2 {
 
     static String get3XPlusOne(int x) {
         StringBuilder sb = new StringBuilder();
-        while(x != 1) {
-            if(x % 2 == 0) {
+        while (x != 1) {
+            if (x % 2 == 0) {
                 x /= 2;
             } else {
-                x = 3*x + 1;
+                x = 3 * x + 1;
             }
             sb.append(x).append(" ");
         }

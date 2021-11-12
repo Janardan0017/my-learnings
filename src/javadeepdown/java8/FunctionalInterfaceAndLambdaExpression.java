@@ -15,7 +15,7 @@ public class FunctionalInterfaceAndLambdaExpression {
         System.out.println(interface1.sum(1, 5));
 
         BiFunction<Integer, Integer, Integer> biFunction = Integer::sum;
-        System.out.println(biFunction.apply(1,2));
+        System.out.println(biFunction.apply(1, 2));
 
     }
 }

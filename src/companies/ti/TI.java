@@ -1,3 +1,5 @@
+package companies.ti;
+
 import java.util.Arrays;
 
 public class TI {

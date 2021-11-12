@@ -1,6 +1,9 @@
 package leetcode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by emp350 on 3/04/20
@@ -27,9 +30,9 @@ public class Problem17 {
             String s = digitCharMap.get(c);
             char[] digitChars = s.toCharArray();
             List<String> temp = new ArrayList<>();
-            for(String str: result){
-                for(char chr : digitChars){
-                    temp.add(str+chr);
+            for (String str : result) {
+                for (char chr : digitChars) {
+                    temp.add(str + chr);
                 }
                 result = temp;
             }

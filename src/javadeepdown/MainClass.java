@@ -11,7 +11,7 @@ public class MainClass {
 //        cycle1.setId(-3);
 //        System.out.println(cycle1);
 
-        BiConsumer<Integer, Integer> biConsumer = (a, b) -> System.out.println(a+b);
-        biConsumer.accept(4,5);
+        BiConsumer<Integer, Integer> biConsumer = (a, b) -> System.out.println(a + b);
+        biConsumer.accept(4, 5);
     }
 }

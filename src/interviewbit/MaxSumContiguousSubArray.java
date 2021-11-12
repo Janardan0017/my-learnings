@@ -20,7 +20,7 @@ public class MaxSumContiguousSubArray {
                 sum = x;
             } else if (x + sum >= sum) {
                 sum += x;
-            } else if (x + sum < sum && x+sum < max) {
+            } else if (x + sum < sum && x + sum < max) {
                 sum = 0;
             }
             max = Math.max(max, sum);

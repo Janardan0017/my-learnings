@@ -9,7 +9,7 @@ public class Tree<T> {
     public Tree() {
     }
 
-    public Tree(int val) {
+    public Tree(T val) {
         root = new TreeNode<T>(val);
     }
 
@@ -21,8 +21,8 @@ public class Tree<T> {
         }
     }
 
-    public List<Integer> preOrderTraversal(TreeNode<T> root) {
-        List<Integer> res = new ArrayList<>();
+    public List<T> preOrderTraversal(TreeNode<T> root) {
+        List<T> res = new ArrayList<>();
         if (root == null) {
             return res;
         }
@@ -49,8 +49,8 @@ public class Tree<T> {
         }
     }
 
-    public List<Integer> inOrderTraversal(TreeNode<T> root) {
-        List<Integer> res = new ArrayList<>();
+    public List<T> inOrderTraversal(TreeNode<T> root) {
+        List<T> res = new ArrayList<>();
         if (root == null) {
             return res;
         }

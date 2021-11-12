@@ -1,7 +1,6 @@
 package madeeasy.tree;
 
 import java.util.LinkedList;
-import java.util.Random;
 
 public class LevelOrder {
 

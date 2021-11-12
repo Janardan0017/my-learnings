@@ -30,8 +30,8 @@ public class GraphModel {
         // remove all edges who are connected with this node
         List<Edge> edgesToRemove = new ArrayList<>();
         // get all edges who are connected to this node
-        for(Edge edge: edges){
-            if(edge.getNodeA().equals(node) || edge.getNodeB().equals(node)){
+        for (Edge edge : edges) {
+            if (edge.getNodeA().equals(node) || edge.getNodeB().equals(node)) {
                 edgesToRemove.add(edge);
             }
         }

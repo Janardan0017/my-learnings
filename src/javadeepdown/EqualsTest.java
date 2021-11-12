@@ -1,7 +1,5 @@
 package javadeepdown;
 
-import java.util.Objects;
-
 public class EqualsTest {
 
     public static void main(String[] args) {
