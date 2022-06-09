@@ -15,7 +15,9 @@ public class ReadWebContent {
     // read data as html
     public static void method1() {
         try {
-            URL url = new URL("https://jsoup.org/download/");
+//            URL url = new URL("https://jsoup.org/download/");
+//            URL url = new URL("https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/");
+            URL url = new URL("https://www.google.com/");
 
             BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
             String str;

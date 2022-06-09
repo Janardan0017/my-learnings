@@ -1,3 +1,4 @@
+package codechef;
 // https://www.codechef.com/JAN18/problems/KCON/
 
 public class KConcatenation {
