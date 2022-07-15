@@ -1,0 +1,21 @@
+package algorithm;
+
+import java.util.Map;
+import java.util.HashMap;
+
+public class KMP {
+
+    public static void main(String[] args) {
+
+    }
+
+    static boolean kmpAlgorithm(String str, String pattern) {
+        Map<Character, Integer> charIndexMap = new HashMap<>();
+        int[] indexes = new int[pattern.length()];
+        for(int i=0; i<pattern.length(); i++) {
+            if(charIndexMap.containsKey(pattern.charAt(i))) {
+                indexes[i] = charIndexMap.get(pattern.charAt(i));
+            }
+        }
+    }
+}
