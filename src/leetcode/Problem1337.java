@@ -13,8 +13,8 @@ public class Problem1337 {
     public static int[] kWeakestRows(int[][] mat, int k) {
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
         for(int i=1; i<mat.length; i++) {
-            priorityQueue.add()
         }
+        return new int[2];
     }
 
     public static int getWeaker(int i, int[] row1, int j, int[] row2) {
