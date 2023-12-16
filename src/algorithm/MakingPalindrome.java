@@ -16,26 +16,24 @@ public class MakingPalindrome {
         System.out.println(makePalindrome("asdfda"));
     }
 
+    //    a b c c d a
     public static String makePalindrome(String str) {
         // check if given string is already a palindrome
-        if (isPalindrome(str))
-            return "Palindrome";
-        String longestPalindrome = "";
-        for (int i = 0; i < str.length(); i++) {
-            String temp = str.replace(str.charAt(i), '\0');
-            if (isPalindrome(temp)) {
-
-            }
+        char[] arr = str.toCharArray();
+        int count = 0;
+        int i = 0;
+        int j = arr.length - 1;
+        while (i < j && arr[i] == arr[j]) {
+            i++;
+            j--;
         }
         return "Not Possible";
     }
 
 
-    public static boolean isPalindrome(String str) {
-        int i = 0;
-        int j = str.length() - 1;
+    public static boolean isPalindrome(char[] arr, int i, int j) {
         while (i < j) {
-            if (str.charAt(i) != str.charAt(j))
+            if (arr[i] != arr[j])
                 return false;
             i++;
             j--;

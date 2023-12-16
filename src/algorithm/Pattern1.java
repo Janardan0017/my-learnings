@@ -6,7 +6,7 @@ public class Pattern1 {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                sb = j < i ? sb.append("  ") : sb.append("* ");
+                sb.append(j < i ? "  " : "* ");
             }
             sb.append("\n");
         }

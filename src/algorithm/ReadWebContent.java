@@ -21,7 +21,7 @@ public class ReadWebContent {
 
             BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
             String str;
-            while ((str = in.readLine()) != null) {
+            while (in.readLine() != null) {
                 str = in.readLine();
                 System.out.println(str);
         /*str will get each time the new line, if you want to store the whole text in str
