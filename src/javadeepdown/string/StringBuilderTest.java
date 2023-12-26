@@ -1,4 +1,4 @@
-package javadeepdown;
+package javadeepdown.string;
 
 public class StringBuilderTest {
 
