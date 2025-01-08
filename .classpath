@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="leetcode/dailychallenges/|leetcode/dailychallenges/jan2021/|leetcode/|codechef/|leetcode/dailychallenges/feb2021/|leetcode/dailychallenges/march2021/" kind="src" path="src"/>
+	<classpathentry kind="src" path="src/codechef"/>
+	<classpathentry excluding="dailychallenges/|dailychallenges/jan2021/|dailychallenges/feb2021/|dailychallenges/march2021/" kind="src" path="src/leetcode"/>
+	<classpathentry excluding="jan2021/|feb2021/|march2021/" kind="src" path="src/leetcode/dailychallenges"/>
+	<classpathentry kind="src" path="src/leetcode/dailychallenges/feb2021"/>
+	<classpathentry kind="src" path="src/leetcode/dailychallenges/jan2021"/>
+	<classpathentry kind="src" path="src/leetcode/dailychallenges/march2021"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
