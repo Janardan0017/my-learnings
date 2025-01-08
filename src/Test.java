@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * Created by emp350 on 3/04/20
@@ -6,9 +6,15 @@ import java.util.Arrays;
 public class Test {
 
     public static void main(String[] args) {
-        int[] arr = {3, 0, 2, 1, 5, 4};
-        Arrays.sort(arr, 0, 3);
-        System.out.println(Arrays.toString(arr));
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        System.out.println();
+        for(int i=1; i<=n; i++) {
+            for(int j=1; j<=10; j++) {
+                System.out.print(i*j+", ");
+            }
+            System.out.println();
+        }
     }
 
 }

@@ -1,9 +1,20 @@
 package leetcode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created for interview-preperation on 3/12/20
  */
 public class Problem3 {
+
+    public static void main(String[] args) {
+        System.out.println(longestNonRepeatingSubstring("abcd"));
+        System.out.println(longestNonRepeatingSubstring("abccd"));
+        System.out.println(longestNonRepeatingSubstring("aaa"));
+        System.out.println(longestNonRepeatingSubstring("ababa"));
+        System.out.println(longestNonRepeatingSubstring("abcdefc"));
+    }
 
     public static String longestNonRepeatingSubstring(String str) {
         char[] chars = str.toCharArray();
@@ -21,13 +32,5 @@ public class Problem3 {
                 result = sb;
         }
         return result.toString();
-    }
-
-    public static void main(String[] args) {
-        System.out.println(longestNonRepeatingSubstring("abcd"));
-        System.out.println(longestNonRepeatingSubstring("abccd"));
-        System.out.println(longestNonRepeatingSubstring("aaa"));
-        System.out.println(longestNonRepeatingSubstring("ababa"));
-        System.out.println(longestNonRepeatingSubstring("abcdefc"));
     }
 }

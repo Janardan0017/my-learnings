@@ -9,6 +9,36 @@ public class Tree<T> {
     public Tree() {
     }
 
+    public Tree(List<T> values) {
+        if(values != null && !values.isEmpty()) {
+            List<TreeNode<T>> levelNodes = new ArrayList<>();
+            TreeNode<T> root = new TreeNode<>(values.get(0));
+            levelNodes.add(root);
+            int i = 1;
+            while (!levelNodes.isEmpty()) {
+                List<TreeNode<T>> newLevelNodes = new ArrayList<>();
+                for(TreeNode<T> node: levelNodes) {
+                    TreeNode<T> leftNode = null;
+                    TreeNode<T> rightNode = null;
+                    if(values.get(i) != null) {
+                        leftNode = new TreeNode<>(values.get(i));
+                        i++;
+                    }
+                    if(i < values.size() && values.get(i) != null) {
+                        rightNode = new TreeNode<>(values.get(i));
+                        i++;
+                    }
+                    node.setLeft(leftNode);
+                    node.setRight(rightNode);
+                    newLevelNodes.add(leftNode);
+                    newLevelNodes.add(rightNode);
+                }
+                levelNodes = newLevelNodes;
+            }
+        }
+
+    }
+
     public Tree(T val) {
         root = new TreeNode<T>(val);
     }

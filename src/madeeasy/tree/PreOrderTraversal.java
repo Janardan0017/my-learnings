@@ -43,6 +43,7 @@ public class PreOrderTraversal {
         while (!stack.isEmpty()) {
             TreeNode<Integer> pop = stack.pop();
             System.out.print(pop.getVal() + " ");
+            //push the right node before left because you will need that node after popping the left node
             if (pop.getRight() != null)
                 stack.push(pop.getRight());
             if (pop.getLeft() != null)
