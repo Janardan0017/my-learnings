@@ -28,6 +28,7 @@ public class BFS {
     }
 
     static class GraphNode<T> {
+
         T value;
         GraphNode<T> parentNode;
         List<GraphNode<T>> childNodes;
@@ -35,6 +36,7 @@ public class BFS {
         public GraphNode() {
             childNodes = new ArrayList<>();
         }
+
         public GraphNode(T value) {
             this.value = value;
             childNodes = new ArrayList<>();
@@ -46,11 +48,11 @@ public class BFS {
 
         @Override
         public String toString() {
-            return "GraphNode{" +
-                    "value=" + value +
-                    ", parentNode=" + parentNode +
-                    ", childNodes=" + childNodes +
-                    '}';
+            return "GraphNode{"
+                    + "value=" + value
+                    + ", parentNode=" + parentNode
+                    + ", childNodes=" + childNodes
+                    + '}';
         }
     }
 }

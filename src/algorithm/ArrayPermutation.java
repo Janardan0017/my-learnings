@@ -4,13 +4,8 @@ import java.util.Arrays;
 public class ArrayPermutation {
 
     public static void main(String[] args) {
-        int arr[] = {1, 2, 3};
+        int arr[] = {1, 2, 3, 4};
         permutationWithoutExtraSpace(arr, 0);
-    }
-
-    static void permutationWithExtraSpace(int[] arr, boolean[] included) {
-        
-
     }
 
     static void permutationWithoutExtraSpace(int[] arr, int k) {

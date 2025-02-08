@@ -3,9 +3,9 @@ package algorithm;
 public class BinarySearch {
 
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5,6,7,8,9};
-        for(int i=-1; i< 12; i++) {
-            System.out.println(i + ": "+getPosition(arr, i));
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        for (int i = -1; i < 12; i++) {
+            System.out.println(i + ": " + getPosition(arr, i));
         }
     }
 
@@ -13,10 +13,10 @@ public class BinarySearch {
         int leftIndex = 0;
         int rightIndex = arr.length - 1;
         int middle = leftIndex + (rightIndex - leftIndex) / 2;
-        while(leftIndex < arr.length && rightIndex >= 0) {
-            if(arr[middle] == x) {
+        while (leftIndex < arr.length && rightIndex >= 0) {
+            if (arr[middle] == x) {
                 break;
-            } else if(arr[middle] > x) {
+            } else if (arr[middle] > x) {
                 rightIndex = middle - 1;
             } else {
                 leftIndex = middle + 1;

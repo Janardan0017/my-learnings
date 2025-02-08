@@ -42,29 +42,33 @@ public class MagicSquare {
         // row check
         for (int i = 0; i < 3; i++) {
             int sum = box[i][0] + box[i][1] + box[i][2];
-            if (sum != 15)
+            if (sum != 15) {
                 return false;
+            }
         }
         // column check
         for (int i = 0; i < 3; i++) {
             int sum = box[0][i] + box[1][i] + box[2][i];
-            if (sum != 15)
+            if (sum != 15) {
                 return false;
+            }
         }
         // diagonal check
         int diagonal1 = box[0][0] + box[1][1] + box[2][2];
-        if (diagonal1 != 15)
+        if (diagonal1 != 15) {
             return false;
+        }
         int diagonal2 = box[0][2] + box[1][1] + box[2][0];
         return diagonal2 == 15;
     }
 
     static int getRandomNumber(Set<Integer> set) {
         int n = random.nextInt();
-        if (n > 0 && !set.contains(n))
-            return n;
-        else
+        if (n > 0 && !set.contains(n)) {
+            return n; 
+        }else {
             return getRandomNumber(set);
+        }
     }
 
     static void printBox(int[][] box) {

@@ -19,6 +19,15 @@ public class Problem3 {
         System.out.println(lengthOfLongestSubstring_map("aabaab!bb"));
     }
 
+    public static boolean containsAll(Map<String, Integer> source, Map<String, Integer> target) {
+        for(Map.Entry<String, Integer> entry: source.entrySet()) {
+            if(entry.getValue() != target.get(entry.getKey())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
      public static int lengthOfLongestSubstring_map(String s) {
         Map<Character, Integer> map = new HashMap<>();
         int start = 0;
