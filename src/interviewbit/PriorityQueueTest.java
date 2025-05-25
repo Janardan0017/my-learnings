@@ -1,27 +1,28 @@
 package interviewbit;
 
-import java.util.Comparator;
+import java.util.ArrayDeque;
+import java.util.LinkedList;
 import java.util.PriorityQueue;
-import java.util.Scanner;
+import java.util.Queue;
 
 public class PriorityQueueTest {
 
     public static void main(String[] args) {
-        PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
-        Scanner in = new Scanner(System.in);
-        int Q = in.nextInt();
-        while (Q-- > 0) {
-            int x = in.nextInt();
-            int y = in.nextInt();
-            if (x == 1) {
-                pq.add(y);
-            } else if (x == 2) {
-                int v = pq.size() > 0 ? pq.peek() : -1;
-                System.out.println(v);
-            } else {
-                if (pq.size() > 0)
-                    pq.poll();
-            }
+        Queue<Integer> lq = new LinkedList<>();
+        Queue<Integer> pq = new PriorityQueue<>();
+        Queue<Integer> aq = new ArrayDeque<>();
+
+        int[] nums = {4, 6, 1, 7, 2, 9};
+        for (int n : nums) {
+            lq.add(n);
+            pq.add(n);
+            aq.add(n);
+            // System.out.println(lq);
+            // System.out.println(pq);
+            // System.out.println(aq);
+        }
+        while(!pq.isEmpty()) {
+            System.out.println(pq.remove());
         }
     }
 }

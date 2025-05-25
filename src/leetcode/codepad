@@ -1,7 +1,0 @@
-package leetcode;
-
-public int maximumUnits(int[][] boxTypes, int truckSize) {
-        for(int i=0; i<boxTypes.lenght; i++) {
-            for(int )
-        }
-    }
