@@ -2,17 +2,17 @@ package madeeasy.linkedlist;
 
 public class ListNode<T> {
 
-    public int val;
+    public T val;
     public ListNode<T> next;
 
     public ListNode() {
     }
 
-    public ListNode(int val) {
+    public ListNode(T val) {
         this.val = val;
     }
 
-    public ListNode(int val, ListNode<T> next) {
+    public ListNode(T val, ListNode<T> next) {
         this.val = val;
         this.next = next;
     }
