@@ -1,15 +1,14 @@
 package leetcode;
 
+import custom.classess.TreeNode;
 import java.util.Stack;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Problem236 {
 
     public static void main(String[] args) {
         Problem236 problem236 = new Problem236();
-        BinaryTree binaryTree = new BinaryTree(Stream.of(3, 5, 1, 6, 2, 0, 8, null, null, 7, 4).collect(Collectors.toList()));
-        problem236.preOrder(binaryTree.getRoot(), null, null);
+        // BinaryTree binaryTree = new BinaryTree(Stream.of(3, 5, 1, 6, 2, 0, 8, null, null, 7, 4).collect(Collectors.toList()));
+        // problem236.preOrder(binaryTree.getRoot(), null, null);
 //        problem236.lowestCommonAncestor(binaryTree.getRoot(), new TreeNode(5), new TreeNode(1));
     }
 

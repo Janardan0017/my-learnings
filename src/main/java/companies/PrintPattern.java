@@ -1,4 +1,4 @@
-package companies.nagarro;
+package companies;
 
 //In last question , an integer n was given , task was to print the pattern. Example given n=5,
 //        1 2 3 4 5

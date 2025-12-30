@@ -1,7 +1,7 @@
 package leetcode;
 
-import madeeasy.linkedlist.ListNode;
-import madeeasy.linkedlist.MyLinkedList;
+import linkedlist.ListNode;
+import linkedlist.MyLinkedList;
 
 /**
  * Created for interview-preperation on 11/06/20

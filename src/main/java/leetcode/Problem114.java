@@ -1,12 +1,12 @@
 package leetcode;
 
-import java.util.Arrays;
+import custom.classess.TreeNode;
 
 public class Problem114 {
 
     public static void main(String[] args) {
-        BinaryTree binaryTree = new BinaryTree(Arrays.asList(1,2,3,4,5,6,7,8,9));
-        flatten(binaryTree.getRoot());
+        // BinaryTree binaryTree = new BinaryTree(Arrays.asList(1,2,3,4,5,6,7,8,9));
+        flatten(null);
     }
 
     public static void flatten(TreeNode root) {

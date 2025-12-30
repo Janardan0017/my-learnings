@@ -1,4 +1,4 @@
-package companies.ti;
+package companies;
 
 import java.util.Arrays;
 

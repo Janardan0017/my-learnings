@@ -1,10 +1,12 @@
 package leetcode;
 
+import custom.classess.TreeNode;
+
 public class Problem938 {
 
     public int sum;
 
-    public int rangeSumBST(TreeNode root, int L, int R) {
+    public int rangeSumBST(TreeNode<Integer> root, int L, int R) {
         if (root == null)
             return 0;
         if (root.val >= L && root.val <= R)

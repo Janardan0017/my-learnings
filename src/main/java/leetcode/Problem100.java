@@ -1,16 +1,15 @@
 package leetcode;
 
+import custom.classess.TreeNode;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class Problem100 {
 
     public static void main(String[] args) {
-        BinaryTree binaryTree = new BinaryTree(Arrays.asList(1, null,1));
-        BinaryTree binaryTree2 = new BinaryTree(Arrays.asList(1, null, 1));
-        boolean sameTree = isSameTree2(binaryTree.getRoot(), binaryTree2.getRoot());
+        TreeNode<Integer> tree1 = new TreeNode<>(1);
+        TreeNode<Integer> tree2 = new TreeNode<>(1);
+        boolean sameTree = isSameTree2(tree1, tree2);
         System.out.println(sameTree);
     }
 
@@ -36,7 +35,7 @@ public class Problem100 {
         return pValues.equals(qValues);
     }
 
-    public static void preOrder(TreeNode root, List<Integer> values) {
+    public static void preOrder(TreeNode<Integer> root, List<Integer> values) {
         if (root == null) {
             values.add(null);
             return;

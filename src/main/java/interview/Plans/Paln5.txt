@@ -1,0 +1,63 @@
+Here’s a curated list of **top resources for each topic** in your revised 7-day Java interview study plan, tailored for your **technical round at NatWest Group**:
+
+---
+
+## 📘 **Day 1: Core Java & Java 8**
+### 🔹 Resources:
+- [GeeksforGeeks Core Java Roadmap](https://www.geeksforgeeks.org/java/best-way-to-start-learning-core-java-a-complete-roadmap/) [1](https://www.geeksforgeeks.org/interview-experiences/rbsnatwest-group-interview-experience-for-java-developer-2-5-yrs-experienced/)
+- [Educative Course: Java 8 for Experienced Developers](https://www.educative.io/courses/java-8-lambdas-stream-api-beyond) [2](https://www.ambitionbox.com/interviews/natwest-group-interview-questions/java-developer/fresher-candidates)
+- [Java 8 Lambdas & Streams Tutorial – DZone](https://dzone.com/articles/java-8-concepts-fp-lambda-expressions-and-streams)
+
+---
+
+## 📘 **Day 2: Multithreading & Concurrency**
+### 🔹 Resources:
+- [Jenkov’s Java Concurrency Tutorial](https://jenkov.com/tutorials/java-concurrency/index.html) [3](https://nodeflair.com/companies/natwest-group/interviews/java-developer)
+- [YouTube: Java Concurrency & Multithreading Complete Course](https://www.youtube.com/watch?v=WldMTtUWqTg)
+- [GeeksforGeeks Multithreading Guide](https://www.geeksforgeeks.org/java/java-multithreading-tutorial/)
+
+---
+
+## 📘 **Day 3: Spring Boot & REST APIs**
+### 🔹 Resources:
+- [MoldStud Guide: Mastering RESTful Services with Spring Boot](https://moldstud.com/articles/p-mastering-restful-service-development-with-spring-boot-a-comprehensive-guide-for-java-developers) [4](https://jobs.natwestgroup.com/system/production/assets/505213/original/NatWest_Group_Interview_Guide_July_2025_%28Public%29.pdf)
+- [Spring.io Official REST Tutorial](https://spring.io/guides/tutorials/rest)
+- Baeldung Spring Boot Tutorials
+
+---
+
+## 📘 **Day 4: Microservices Basics**
+### 🔹 Resources:
+- [GeeksforGeeks Java Microservices Tutorial](https://www.geeksforgeeks.org/advance-java/java-microservices/) [5](https://www.youtube.com/watch?v=sAaGNwKW4ew)
+- Spring Cloud Documentation
+- [CodezUp Microservices Guide](https://codezup.com/implementing-microservices-in-java-hands-on-tutorial/)
+
+---
+
+## 📘 **Day 5: SQL & Data Structures**
+### 🔹 Resources:
+- [PlacementPreparation.io – Top DSA Practice Sites](https://www.placementpreparation.io/blog/best-websites-to-practice-data-structures-and-algorithms/) [6](https://www.naukri.com/code360/interview-bundle/natwest-group)
+- Practice Platforms:
+  - LeetCode
+  - HackerRank
+  - [CodeChef](https://www.codechef.com/practice)
+
+---
+
+## 📘 **Day 6: System Design (Basic)**
+### 🔹 Resources:
+- [Educative: Grokking Modern System Design Interview](https://dev.to/educative/what-are-the-best-resources-for-studying-system-design-15c) [7](https://www.naukri.com/code360/interview-experiences/natwest-group)
+- System Design Primer on GitHub
+- Alex Xu’s System Design Interview Book
+
+---
+
+## 📘 **Day 7: Mock Interview & Review**
+### 🔹 Platforms:
+- [Pramp](https://www.pramp.com/) – Free mock interviews
+- Interviewing.io – Anonymous mock interviews
+- Educative’s Interview Prep Tools
+
+---
+
+Would you like a **downloadable PDF version** of this plan with clickable links and checkboxes for tracking?

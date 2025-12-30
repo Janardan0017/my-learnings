@@ -1,6 +1,10 @@
-package companies.paytm;
+package companies;
 
 //Shift all even nodes to one side and odd nodes to other side
+
+import linkedlist.ListNode;
+import linkedlist.MyLinkedList;
+
 public class LinkedListProblem1 {
 
     public static void main(String[] args) {

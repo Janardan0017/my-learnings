@@ -1,12 +1,14 @@
 package leetcode;
 
+import linkedlist.ListNode;
+
 public class Problem92 {
 
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11});
-        System.out.println(linkedList);
-        ListNode head = reverseBetween(linkedList.head, 1, 3);
-        System.out.println(new LinkedList(head));
+        // LinkedList linkedList = new LinkedList(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11});
+        // System.out.println(linkedList);
+        // ListNode head = reverseBetween(linkedList.head, 1, 3);
+        // System.out.println(new LinkedList(head));
     }
 
     public static ListNode reverseBetween(ListNode head, int left, int right) {

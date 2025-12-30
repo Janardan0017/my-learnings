@@ -1,0 +1,89 @@
+Great! Here's a **7-day Java interview study plan** tailored for your **7 years of experience** and targeting **NatWest Group**:
+
+---
+
+## 📅 **Day 1: Core Java Deep Dive**
+- **OOP Principles**: Inheritance, Polymorphism, Abstraction, Encapsulation
+- **Java 8 Features**: Streams, Lambdas, Functional Interfaces, Optional
+- **Collections**: List, Set, Map, Queue – internal workings and performance
+- **Memory Management**: Garbage Collection, JVM internals
+
+🔧 Practice:
+- Implement custom sorting using Comparator
+- Stream-based data filtering and transformation
+
+---
+
+## 📅 **Day 2: Multithreading & Concurrency**
+- **Thread Lifecycle**, `Runnable` vs `Callable`
+- **Executors**, `Future`, `CompletableFuture`
+- **Synchronization**, `volatile`, `AtomicInteger`
+- **Deadlocks**, race conditions, thread-safe collections
+
+🔧 Practice:
+- Producer-consumer problem
+- Thread pool implementation
+
+---
+
+## 📅 **Day 3: Spring Boot & REST APIs**
+- **Spring Boot Basics**: Annotations, Dependency Injection
+- **REST API Development**: Controllers, Services, Exception Handling
+- **Spring Data JPA**: Repositories, Custom Queries
+- **Unit Testing**: JUnit, Mockito
+
+🔧 Practice:
+- Build a simple CRUD API
+- Write unit tests for service layer
+
+---
+
+## 📅 **Day 4: Microservices & System Design**
+- **Microservices Architecture**: API Gateway, Service Registry
+- **Inter-service Communication**: Feign, REST
+- **Resilience Patterns**: Retry, Circuit Breaker
+- **Basic System Design**: Car Rental System, Notification Service
+
+🔧 Practice:
+- Design a scalable URL shortener
+- Draw class diagrams for a booking system
+
+---
+
+## 📅 **Day 5: SQL & Database Design**
+- **SQL Queries**: Joins, Aggregations, Subqueries
+- **Indexes**, normalization, transactions
+- **JPA vs JDBC**, Entity relationships
+
+🔧 Practice:
+- Write queries for top N salaries, duplicate detection
+- Design schema for an e-commerce app
+
+---
+
+## 📅 **Day 6: DevOps & CI/CD Basics**
+- **Docker**: Containerizing Java apps
+- **Kubernetes**: Pods, deployments, services
+- **CI/CD Tools**: Jenkins, GitHub Actions
+- **Monitoring**: Prometheus, Grafana basics
+
+🔧 Practice:
+- Dockerize a Spring Boot app
+- Write a basic Jenkins pipeline
+
+---
+
+## 📅 **Day 7: Mock Interviews & Behavioral Prep**
+- **Mock Interview**: Practice coding + system design
+- **Behavioral Questions**:
+  - Leadership and mentoring experiences
+  - Conflict resolution
+  - Project ownership and delivery
+
+🔧 Practice:
+- STAR format answers
+- Prepare 2–3 stories from past projects
+
+---
+
+Would you like me to generate a **printable checklist or calendar version** of this plan for easy tracking?

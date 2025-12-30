@@ -1,7 +1,7 @@
 package leetcode.dailychallenges.jan2021;
 
-import madeeasy.linkedlist.ListNode;
-import madeeasy.linkedlist.MyLinkedList;
+import linkedlist.ListNode;
+import linkedlist.MyLinkedList;
 
 /**
  * Created for interview-preparation on 25/01/21

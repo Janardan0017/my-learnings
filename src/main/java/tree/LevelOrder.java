@@ -1,13 +1,15 @@
-package madeeasy.tree;
+package tree;
 
 import java.util.LinkedList;
+
+import custom.classess.TreeNode;
 
 public class LevelOrder {
 
     public static void main(String[] args) {
-        TreeNode<Integer> node1 = TreeUtil.getTestTree();
-        levelOrder(node1);
-        System.out.println(getHeight(node1));
+        // TreeNode<Integer> node1 = TreeUtil.getTestTree();
+        // levelOrder(node1);
+        // System.out.println(getHeight(node1));
     }
 
     public static void levelOrder(TreeNode<Integer> root) {
@@ -28,13 +30,13 @@ public class LevelOrder {
             } else {
                 sb.append(" ");
             }
-            sb.append(currentNode.getVal());
-            if (currentNode.getLeft() != null) {
-                linkedList.add(currentNode.getLeft());
+            sb.append(currentNode.val);
+            if (currentNode.left != null) {
+                linkedList.add(currentNode.left);
                 level.add(currentLevel + 1);
             }
-            if (currentNode.getRight() != null) {
-                linkedList.add(currentNode.getRight());
+            if (currentNode.right != null) {
+                linkedList.add(currentNode.right);
                 level.add(currentLevel + 1);
             }
         }
@@ -52,12 +54,12 @@ public class LevelOrder {
         while (linkedList.size() > 0) {
             TreeNode<Integer> currentNode = linkedList.poll();
             currentLevel = level.poll();
-            if (currentNode.getLeft() != null) {
-                linkedList.add(currentNode.getLeft());
+            if (currentNode.left != null) {
+                linkedList.add(currentNode.left);
                 level.add(currentLevel + 1);
             }
-            if (currentNode.getRight() != null) {
-                linkedList.add(currentNode.getRight());
+            if (currentNode.right != null) {
+                linkedList.add(currentNode.right);
                 level.add(currentLevel + 1);
             }
         }
@@ -69,12 +71,12 @@ public class LevelOrder {
             return new TreeNode<Integer>(data);
         } else {
             TreeNode<Integer> cur;
-            if (data <= root.getVal()) {
-                cur = insert(root.getLeft(), data);
-                root.setLeft(cur);
+            if (data <= root.val) {
+                cur = insert(root.left, data);
+                root.left = cur;
             } else {
-                cur = insert(root.getRight(), data);
-                root.setRight(cur);
+                cur = insert(root.right, data);
+                root.right = (cur);
             }
             return root;
         }

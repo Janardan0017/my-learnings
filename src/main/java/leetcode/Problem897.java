@@ -2,6 +2,8 @@ package leetcode;
 
 import java.util.Random;
 
+import custom.classess.TreeNode;
+
 /**
  * Created for interview-preparation on 3/12/20
  */
@@ -16,22 +18,24 @@ public class Problem897 {
         print(root);
     }
 
-    private static TreeNode insertIntoBST(TreeNode root, int val) {
-        if (root == null)
+    private static TreeNode insertIntoBST(TreeNode<Integer> root, int val) {
+        if (root == null) {
             root = new TreeNode(val);
-        if (val < root.val)
-            insertIntoBST(root.left, val);
-        else if (val > root.val)
+        }
+        if (val < root.val) {
+            insertIntoBST(root.left, val); 
+        }else if (val > root.val) {
             insertIntoBST(root.right, val);
+        }
         return root;
     }
 
     private static void print(TreeNode root) {
-        if (root == null)
+        if (root == null) {
             return;
+        }
         print(root.left);
         System.out.println(root.val);
         print(root.right);
     }
 }
-

@@ -1,4 +1,4 @@
-package companies.accolite;
+package companies;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

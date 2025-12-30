@@ -1,4 +1,4 @@
-package madeeasy.tree;
+package tree;
 
 /**
  * Created for interview-preparation on 5/12/20

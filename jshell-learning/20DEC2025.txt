@@ -1,0 +1,19 @@
+Queue<Integer> q = new LinkedList<>();
+q.add(1)
+q.offer(2)
+q.peek()
+q.poll()
+q
+q.peek()
+q
+q.poll()
+q
+Queue<Integer> pq = new PriorityQueue<>();
+pq.add(4)
+pq.add(1)
+pq
+Comparator<TreeNode> treeComparator = (node1, node2) -> Integer.compare(node1.val, node2.val);
+Queue<TreeNode> tq = new PriorityQueue<>(treeComparator);
+tq.add(new TreeNode(4))
+tq.add(new TreeNode(3))
+tq

@@ -1,0 +1,102 @@
+Here’s your **revised 7-day technical interview study plan** for NatWest Group, tailored to your **7 years of experience** and focusing only on **technical topics** relevant to your upcoming round on **Saturday, September 13**:
+
+---
+
+## 📅 **Day 1 (Friday, Sept 6): Core Java & Java 8**
+- **OOP Concepts**: Inheritance, Polymorphism, Abstraction, Encapsulation
+- **Java 8 Features**:
+  - Streams API (map, filter, reduce)
+  - Lambda expressions
+  - Functional interfaces
+  - Optional class
+- **Collections Framework**:
+  - List, Set, Map – internal implementations and performance
+  - `HashMap` vs `ConcurrentHashMap`
+
+🔧 **Practice**:
+- Stream-based problems (e.g., find duplicate elements, group by)
+- Custom sorting using Comparator
+
+---
+
+## 📅 **Day 2 (Saturday, Sept 7): Multithreading & Concurrency**
+- Thread lifecycle, `Runnable` vs `Callable`
+- `ExecutorService`, `Future`, `CompletableFuture`
+- `synchronized`, `volatile`, `AtomicInteger`
+- Deadlocks and race conditions
+
+🔧 **Practice**:
+- Producer-consumer problem
+- Thread-safe counter using `AtomicInteger`
+
+---
+
+## 📅 **Day 3 (Sunday, Sept 8): Spring Boot & REST APIs**
+- Spring Boot annotations (`@RestController`, `@Service`, `@Autowired`)
+- REST API development: CRUD operations
+- Exception handling (`@ControllerAdvice`)
+- Spring Data JPA: Repositories, custom queries
+
+🔧 **Practice**:
+- Build a simple REST API (e.g., employee management)
+- Write unit tests using JUnit and Mockito
+
+---
+
+## 📅 **Day 4 (Monday, Sept 9): Microservices Basics**
+- Microservices architecture overview
+- Inter-service communication: REST, Feign clients
+- Resilience patterns: Retry, Circuit Breaker (Resilience4j)
+- API Gateway basics
+
+🔧 **Practice**:
+- Design a microservice for booking system
+- Implement Feign client in a sample project
+
+---
+
+## 📅 **Day 5 (Tuesday, Sept 10): SQL & Data Structures**
+- SQL: Joins, subqueries, aggregations
+- Write queries for:
+  - Top N salaries
+  - Duplicate detection
+  - Conditional filtering
+- Data Structures:
+  - Arrays, Strings, HashMap, Sliding Window
+
+🔧 **Practice**:
+- Solve 3–5 SQL problems on LeetCode/HackerRank
+- Implement sliding window problems in Java
+
+---
+
+## 📅 **Day 6 (Wednesday, Sept 11): System Design (Basic)**
+- SOLID principles
+- Low-level design: Class diagrams, modularity
+- High-level design: Scalability, caching, load balancing
+- Design examples:
+  - Car rental system
+  - Notification service
+
+🔧 **Practice**:
+- Draw class diagrams for a real-world system
+- Explain trade-offs in design decisions
+
+---
+
+## 📅 **Day 7 (Thursday, Sept 12): Mock Interview & Review**
+- Simulate a technical interview:
+  - 2 coding questions
+  - 1 system design question
+  - 2 Spring Boot questions
+- Review:
+  - Resume-based questions
+  - Past projects and architecture decisions
+
+🔧 **Practice**:
+- Use platforms like Pramp or Interviewing.io
+- Prepare concise explanations for your past work
+
+---
+
+Would you like this plan as a **printable checklist or calendar file** to track your progress daily?

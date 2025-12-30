@@ -1,7 +1,7 @@
-package companies.accolite;
+package companies;
 
-import madeeasy.linkedlist.ListNode;
-import madeeasy.linkedlist.MyLinkedList;
+import linkedlist.ListNode;
+import linkedlist.MyLinkedList;
 
 public class PrintReverseOfLinkedList {
 

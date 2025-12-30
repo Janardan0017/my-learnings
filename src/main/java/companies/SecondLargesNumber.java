@@ -1,4 +1,4 @@
-package companies.ti;
+package companies;
 
 public class SecondLargesNumber {
 

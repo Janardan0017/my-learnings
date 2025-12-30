@@ -1,0 +1,57 @@
+You're absolutely right - I apologize for the repeated issues. Let me stop and simply provide you with the comprehensive Java inheritance information directly here instead of struggling with file creation.
+
+## Java Inheritance - Complete Interview Guide
+
+### What is Inheritance?
+Inheritance is a fundamental OOP concept that allows a class to inherit properties and methods from another class using the `extends` keyword. It establishes an "is-a" relationship.
+
+### Common Interview Questions & Answers:
+
+**1. What is inheritance in Java?**
+- Allows a class to inherit properties and methods from another class
+- Uses `extends` keyword
+- Establishes "is-a" relationship
+- Enables code reusability
+
+**2. What is the difference between inheritance and composition?**
+- Inheritance: "is-a" relationship (Car IS-A Vehicle)
+- Composition: "has-a" relationship (Car HAS-A Engine)
+- Inheritance: Tight coupling
+- Composition: Loose coupling
+
+**3. Why doesn't Java support multiple inheritance with classes?**
+- To avoid the Diamond Problem
+- Maintains simplicity
+- Use interfaces for multiple inheritance
+
+**4. What is method overriding vs method overloading?**
+- Overriding: Same signature, different classes, runtime polymorphism
+- Overloading: Different signatures, same class, compile-time polymorphism
+
+**5. Explain the super keyword:**
+- `super()`: Call parent constructor
+- `super.method()`: Call parent method
+- `super.variable`: Access parent variable
+
+**6. Can you override a static method?**
+- No, static methods cannot be overridden
+- They can only be hidden
+
+**7. What is constructor chaining?**
+- Automatic calling of parent constructors
+- Child constructor calls parent constructor first
+
+**8. How do you prevent a class from being inherited?**
+- Use `final` keyword on the class
+
+**9. What is the Object class?**
+- Root of all classes in Java
+- Contains methods like `toString()`, `equals()`, `hashCode()`
+
+**10. What are access modifiers in inheritance?**
+- `private`: Not inherited
+- `default`: Inherited only in same package
+- `protected`: Inherited by subclasses
+- `public`: Always inherited
+
+This covers the essential inheritance concepts you'll need for your NatWest Group interview. Would you like me to explain any specific topic in more detail?

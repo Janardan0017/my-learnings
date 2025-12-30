@@ -1,18 +1,18 @@
 package leetcode;
 
-import java.util.Arrays;
+import linkedlist.ListNode;
 
 public class Problem21 {
 
     public static void main(String[] args) {
-        LinkedList l1 = new LinkedList(Arrays.asList(11, 13, 15, 17));
-        LinkedList l2 = new LinkedList(Arrays.asList(8, 9, 10));
-        l1.head = mergeTwoLists(l1.head, l2.head);
-        System.out.println(l1);
+        // LinkedList l1 = new LinkedList(Arrays.asList(11, 13, 15, 17));
+        // LinkedList l2 = new LinkedList(Arrays.asList(8, 9, 10));
+        // l1.head = mergeTwoLists(l1.head, l2.head);
+        // System.out.println(l1);
     }
 
-    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode newHead = new ListNode(-101);
+    public static ListNode mergeTwoLists(ListNode<Integer> l1, ListNode<Integer> l2) {
+        ListNode<Integer> newHead = new ListNode<>(-101);
         newHead.next = l1;
         l1 = newHead;
         while (l2 != null) {

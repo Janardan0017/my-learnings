@@ -1,4 +1,4 @@
-package companies.paytm;
+package companies;
 
 public class RotatedArray {
 

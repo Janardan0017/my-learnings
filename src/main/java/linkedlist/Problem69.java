@@ -1,4 +1,4 @@
-package madeeasy.linkedlist;
+package linkedlist;
 
 public class Problem69 {
 

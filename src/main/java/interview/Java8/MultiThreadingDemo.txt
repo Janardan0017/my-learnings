@@ -1,0 +1,874 @@
+I'll provide you with a comprehensive guide to multithreading in Java, covering all the essential concepts you'll need for your interview.
+
+Ran tool
+## Multithreading in Java - Complete Interview Guide
+
+### What is Multithreading?
+
+**Multithreading** is the ability of a program to execute multiple threads concurrently, allowing it to perform multiple tasks simultaneously. In Java, multithreading is built into the language and provides a powerful way to create responsive and efficient applications.
+
+### Key Concepts:
+- **Thread**: A lightweight process that can run concurrently with other threads
+- **Concurrency**: Multiple threads executing at the same time
+- **Parallelism**: Multiple threads executing simultaneously on different CPU cores
+- **Race Condition**: When multiple threads access shared resources simultaneously
+- **Deadlock**: When two or more threads are blocked forever waiting for each other
+
+---
+
+## Complete Multithreading Examples:
+
+```java
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.*;
+import java.util.concurrent.locks.*;
+
+public class MultithreadingCompleteGuide {
+    
+    public static void main(String[] args) throws InterruptedException {
+        MultithreadingCompleteGuide demo = new MultithreadingCompleteGuide();
+        
+        System.out.println("=== JAVA MULTITHREADING COMPLETE GUIDE ===\n");
+        
+        // 1. Thread Creation
+        demo.threadCreation();
+        
+        // 2. Thread Lifecycle
+        demo.threadLifecycle();
+        
+        // 3. Synchronization
+        demo.synchronization();
+        
+        // 4. Thread Communication
+        demo.threadCommunication();
+        
+        // 5. Thread Pools and Executors
+        demo.threadPoolsAndExecutors();
+        
+        // 6. Concurrent Collections
+        demo.concurrentCollections();
+        
+        // 7. Advanced Concepts
+        demo.advancedConcepts();
+        
+        // 8. Common Problems and Solutions
+        demo.commonProblemsAndSolutions();
+    }
+    
+    // ==================== 1. THREAD CREATION ====================
+    public void threadCreation() throws InterruptedException {
+        System.out.println("1. THREAD CREATION");
+        System.out.println("==================");
+        
+        // Method 1: Extending Thread class
+        System.out.println("Method 1: Extending Thread class");
+        MyThread thread1 = new MyThread("Thread-1");
+        thread1.start();
+        thread1.join();
+        
+        // Method 2: Implementing Runnable interface
+        System.out.println("\nMethod 2: Implementing Runnable interface");
+        Thread thread2 = new Thread(new MyRunnable("Thread-2"));
+        thread2.start();
+        thread2.join();
+        
+        // Method 3: Lambda expression
+        System.out.println("\nMethod 3: Lambda expression");
+        Thread thread3 = new Thread(() -> {
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Lambda Thread: " + i);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    break;
+                }
+            }
+        });
+        thread3.start();
+        thread3.join();
+        
+        // Method 4: Using ExecutorService
+        System.out.println("\nMethod 4: Using ExecutorService");
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        executor.submit(() -> {
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Executor Thread: " + i);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    break;
+                }
+            }
+        });
+        executor.shutdown();
+        executor.awaitTermination(10, TimeUnit.SECONDS);
+        
+        System.out.println();
+    }
+    
+    // ==================== 2. THREAD LIFECYCLE ====================
+    public void threadLifecycle() throws InterruptedException {
+        System.out.println("2. THREAD LIFECYCLE");
+        System.out.println("==================");
+        
+        Thread lifecycleThread = new Thread(() -> {
+            System.out.println("Thread is running...");
+            try {
+                Thread.sleep(2000);
+                System.out.println("Thread is still running...");
+                Thread.sleep(2000);
+                System.out.println("Thread is finishing...");
+            } catch (InterruptedException e) {
+                System.out.println("Thread was interrupted!");
+                Thread.currentThread().interrupt();
+            }
+        });
+        
+        System.out.println("Thread state: " + lifecycleThread.getState()); // NEW
+        
+        lifecycleThread.start();
+        System.out.println("Thread state after start: " + lifecycleThread.getState()); // RUNNABLE
+        
+        Thread.sleep(1000);
+        System.out.println("Thread state after 1 second: " + lifecycleThread.getState()); // TIMED_WAITING
+        
+        lifecycleThread.join();
+        System.out.println("Thread state after join: " + lifecycleThread.getState()); // TERMINATED
+        
+        System.out.println();
+    }
+    
+    // ==================== 3. SYNCHRONIZATION ====================
+    public void synchronization() throws InterruptedException {
+        System.out.println("3. SYNCHRONIZATION");
+        System.out.println("==================");
+        
+        // Problem without synchronization
+        System.out.println("Problem without synchronization:");
+        Counter counter = new Counter();
+        Thread[] threads = new Thread[5];
+        
+        for (int i = 0; i < 5; i++) {
+            threads[i] = new Thread(() -> {
+                for (int j = 0; j < 1000; j++) {
+                    counter.increment();
+                }
+            });
+            threads[i].start();
+        }
+        
+        for (Thread thread : threads) {
+            thread.join();
+        }
+        
+        System.out.println("Counter value (without sync): " + counter.getValue());
+        
+        // Solution with synchronization
+        System.out.println("\nSolution with synchronization:");
+        SynchronizedCounter syncCounter = new SynchronizedCounter();
+        Thread[] syncThreads = new Thread[5];
+        
+        for (int i = 0; i < 5; i++) {
+            syncThreads[i] = new Thread(() -> {
+                for (int j = 0; j < 1000; j++) {
+                    syncCounter.increment();
+                }
+            });
+            syncThreads[i].start();
+        }
+        
+        for (Thread thread : syncThreads) {
+            thread.join();
+        }
+        
+        System.out.println("Counter value (with sync): " + syncCounter.getValue());
+        
+        // Using ReentrantLock
+        System.out.println("\nUsing ReentrantLock:");
+        LockCounter lockCounter = new LockCounter();
+        Thread[] lockThreads = new Thread[5];
+        
+        for (int i = 0; i < 5; i++) {
+            lockThreads[i] = new Thread(() -> {
+                for (int j = 0; j < 1000; j++) {
+                    lockCounter.increment();
+                }
+            });
+            lockThreads[i].start();
+        }
+        
+        for (Thread thread : lockThreads) {
+            thread.join();
+        }
+        
+        System.out.println("Counter value (with lock): " + lockCounter.getValue());
+        
+        System.out.println();
+    }
+    
+    // ==================== 4. THREAD COMMUNICATION ====================
+    public void threadCommunication() throws InterruptedException {
+        System.out.println("4. THREAD COMMUNICATION");
+        System.out.println("========================");
+        
+        // Using wait() and notify()
+        System.out.println("Using wait() and notify():");
+        Message message = new Message();
+        
+        Thread producer = new Thread(new Producer(message));
+        Thread consumer = new Thread(new Consumer(message));
+        
+        producer.start();
+        consumer.start();
+        
+        producer.join();
+        consumer.join();
+        
+        // Using BlockingQueue
+        System.out.println("\nUsing BlockingQueue:");
+        BlockingQueue<String> queue = new ArrayBlockingQueue<>(5);
+        
+        Thread producer2 = new Thread(() -> {
+            try {
+                for (int i = 0; i < 10; i++) {
+                    queue.put("Message " + i);
+                    System.out.println("Produced: Message " + i);
+                    Thread.sleep(1000);
+                }
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        });
+        
+        Thread consumer2 = new Thread(() -> {
+            try {
+                for (int i = 0; i < 10; i++) {
+                    String msg = queue.take();
+                    System.out.println("Consumed: " + msg);
+                    Thread.sleep(1500);
+                }
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        });
+        
+        producer2.start();
+        consumer2.start();
+        
+        producer2.join();
+        consumer2.join();
+        
+        System.out.println();
+    }
+    
+    // ==================== 5. THREAD POOLS AND EXECUTORS ====================
+    public void threadPoolsAndExecutors() throws InterruptedException {
+        System.out.println("5. THREAD POOLS AND EXECUTORS");
+        System.out.println("=============================");
+        
+        // Fixed Thread Pool
+        System.out.println("Fixed Thread Pool:");
+        ExecutorService fixedPool = Executors.newFixedThreadPool(3);
+        
+        for (int i = 0; i < 10; i++) {
+            final int taskId = i;
+            fixedPool.submit(() -> {
+                System.out.println("Task " + taskId + " executed by " + Thread.currentThread().getName());
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            });
+        }
+        
+        fixedPool.shutdown();
+        fixedPool.awaitTermination(15, TimeUnit.SECONDS);
+        
+        // Cached Thread Pool
+        System.out.println("\nCached Thread Pool:");
+        ExecutorService cachedPool = Executors.newCachedThreadPool();
+        
+        for (int i = 0; i < 5; i++) {
+            final int taskId = i;
+            cachedPool.submit(() -> {
+                System.out.println("Cached task " + taskId + " executed by " + Thread.currentThread().getName());
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            });
+        }
+        
+        cachedPool.shutdown();
+        cachedPool.awaitTermination(10, TimeUnit.SECONDS);
+        
+        // Scheduled Thread Pool
+        System.out.println("\nScheduled Thread Pool:");
+        ScheduledExecutorService scheduledPool = Executors.newScheduledThreadPool(2);
+        
+        // Schedule a task to run after 2 seconds
+        scheduledPool.schedule(() -> {
+            System.out.println("Scheduled task executed after 2 seconds");
+        }, 2, TimeUnit.SECONDS);
+        
+        // Schedule a task to run every 1 second
+        ScheduledFuture<?> future = scheduledPool.scheduleAtFixedRate(() -> {
+            System.out.println("Repeating task executed at: " + new Date());
+        }, 0, 1, TimeUnit.SECONDS);
+        
+        // Stop the repeating task after 5 seconds
+        scheduledPool.schedule(() -> {
+            future.cancel(false);
+            System.out.println("Repeating task cancelled");
+        }, 5, TimeUnit.SECONDS);
+        
+        Thread.sleep(7000);
+        scheduledPool.shutdown();
+        
+        System.out.println();
+    }
+    
+    // ==================== 6. CONCURRENT COLLECTIONS ====================
+    public void concurrentCollections() {
+        System.out.println("6. CONCURRENT COLLECTIONS");
+        System.out.println("=========================");
+        
+        // ConcurrentHashMap
+        System.out.println("ConcurrentHashMap:");
+        Map<String, Integer> concurrentMap = new ConcurrentHashMap<>();
+        
+        // Multiple threads adding to the map
+        ExecutorService executor = Executors.newFixedThreadPool(5);
+        for (int i = 0; i < 10; i++) {
+            final int threadId = i;
+            executor.submit(() -> {
+                for (int j = 0; j < 100; j++) {
+                    concurrentMap.put("key" + (threadId * 100 + j), threadId * 100 + j);
+                }
+            });
+        }
+        
+        executor.shutdown();
+        try {
+            executor.awaitTermination(5, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        
+        System.out.println("ConcurrentHashMap size: " + concurrentMap.size());
+        
+        // CopyOnWriteArrayList
+        System.out.println("\nCopyOnWriteArrayList:");
+        List<String> copyOnWriteList = new CopyOnWriteArrayList<>();
+        copyOnWriteList.add("Item 1");
+        copyOnWriteList.add("Item 2");
+        copyOnWriteList.add("Item 3");
+        
+        // Multiple threads reading and writing
+        ExecutorService executor2 = Executors.newFixedThreadPool(3);
+        for (int i = 0; i < 3; i++) {
+            final int threadId = i;
+            executor2.submit(() -> {
+                // Reading
+                for (String item : copyOnWriteList) {
+                    System.out.println("Thread " + threadId + " reading: " + item);
+                }
+                // Writing
+                copyOnWriteList.add("New item from thread " + threadId);
+            });
+        }
+        
+        executor2.shutdown();
+        try {
+            executor2.awaitTermination(5, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        
+        System.out.println("CopyOnWriteArrayList size: " + copyOnWriteList.size());
+        
+        // BlockingQueue
+        System.out.println("\nBlockingQueue:");
+        BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(3);
+        
+        // Producer
+        Thread producer = new Thread(() -> {
+            try {
+                for (int i = 0; i < 5; i++) {
+                    blockingQueue.put("Item " + i);
+                    System.out.println("Produced: Item " + i);
+                }
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        });
+        
+        // Consumer
+        Thread consumer = new Thread(() -> {
+            try {
+                for (int i = 0; i < 5; i++) {
+                    String item = blockingQueue.take();
+                    System.out.println("Consumed: " + item);
+                    Thread.sleep(1000);
+                }
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        });
+        
+        producer.start();
+        consumer.start();
+        
+        try {
+            producer.join();
+            consumer.join();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        
+        System.out.println();
+    }
+    
+    // ==================== 7. ADVANCED CONCEPTS ====================
+    public void advancedConcepts() throws InterruptedException {
+        System.out.println("7. ADVANCED CONCEPTS");
+        System.out.println("===================");
+        
+        // Atomic Operations
+        System.out.println("Atomic Operations:");
+        AtomicInteger atomicCounter = new AtomicInteger(0);
+        
+        ExecutorService executor = Executors.newFixedThreadPool(5);
+        for (int i = 0; i < 10; i++) {
+            executor.submit(() -> {
+                for (int j = 0; j < 1000; j++) {
+                    atomicCounter.incrementAndGet();
+                }
+            });
+        }
+        
+        executor.shutdown();
+        executor.awaitTermination(5, TimeUnit.SECONDS);
+        
+        System.out.println("Atomic counter value: " + atomicCounter.get());
+        
+        // CountDownLatch
+        System.out.println("\nCountDownLatch:");
+        CountDownLatch latch = new CountDownLatch(3);
+        
+        for (int i = 0; i < 3; i++) {
+            final int taskId = i;
+            new Thread(() -> {
+                System.out.println("Task " + taskId + " completed");
+                latch.countDown();
+            }).start();
+        }
+        
+        latch.await();
+        System.out.println("All tasks completed!");
+        
+        // CyclicBarrier
+        System.out.println("\nCyclicBarrier:");
+        CyclicBarrier barrier = new CyclicBarrier(3, () -> {
+            System.out.println("All threads reached the barrier!");
+        });
+        
+        for (int i = 0; i < 3; i++) {
+            final int threadId = i;
+            new Thread(() -> {
+                try {
+                    System.out.println("Thread " + threadId + " is waiting at barrier");
+                    barrier.await();
+                    System.out.println("Thread " + threadId + " passed the barrier");
+                } catch (InterruptedException | BrokenBarrierException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }).start();
+        }
+        
+        Thread.sleep(2000);
+        
+        // Semaphore
+        System.out.println("\nSemaphore:");
+        Semaphore semaphore = new Semaphore(2); // Allow 2 threads at a time
+        
+        for (int i = 0; i < 5; i++) {
+            final int threadId = i;
+            new Thread(() -> {
+                try {
+                    semaphore.acquire();
+                    System.out.println("Thread " + threadId + " acquired permit");
+                    Thread.sleep(2000);
+                    System.out.println("Thread " + threadId + " releasing permit");
+                    semaphore.release();
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }).start();
+        }
+        
+        Thread.sleep(10000);
+        
+        System.out.println();
+    }
+    
+    // ==================== 8. COMMON PROBLEMS AND SOLUTIONS ====================
+    public void commonProblemsAndSolutions() throws InterruptedException {
+        System.out.println("8. COMMON PROBLEMS AND SOLUTIONS");
+        System.out.println("=================================");
+        
+        // Deadlock Example
+        System.out.println("Deadlock Example:");
+        Object lock1 = new Object();
+        Object lock2 = new Object();
+        
+        Thread thread1 = new Thread(() -> {
+            synchronized (lock1) {
+                System.out.println("Thread 1 acquired lock1");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+                synchronized (lock2) {
+                    System.out.println("Thread 1 acquired lock2");
+                }
+            }
+        });
+        
+        Thread thread2 = new Thread(() -> {
+            synchronized (lock2) {
+                System.out.println("Thread 2 acquired lock2");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+                synchronized (lock1) {
+                    System.out.println("Thread 2 acquired lock1");
+                }
+            }
+        });
+        
+        thread1.start();
+        thread2.start();
+        
+        // Wait a bit to see the deadlock
+        Thread.sleep(3000);
+        
+        // Interrupt threads to break deadlock
+        thread1.interrupt();
+        thread2.interrupt();
+        
+        thread1.join();
+        thread2.join();
+        
+        System.out.println("Deadlock example completed");
+        
+        // Race Condition Example
+        System.out.println("\nRace Condition Example:");
+        RaceConditionExample raceExample = new RaceConditionExample();
+        raceExample.demonstrateRaceCondition();
+        
+        System.out.println();
+    }
+}
+
+// Supporting classes for examples
+class MyThread extends Thread {
+    private String name;
+    
+    public MyThread(String name) {
+        this.name = name;
+    }
+    
+    @Override
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(name + ": " + i);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                break;
+            }
+        }
+    }
+}
+
+class MyRunnable implements Runnable {
+    private String name;
+    
+    public MyRunnable(String name) {
+        this.name = name;
+    }
+    
+    @Override
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(name + ": " + i);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                break;
+            }
+        }
+    }
+}
+
+class Counter {
+    private int value = 0;
+    
+    public void increment() {
+        value++; // Not thread-safe
+    }
+    
+    public int getValue() {
+        return value;
+    }
+}
+
+class SynchronizedCounter {
+    private int value = 0;
+    
+    public synchronized void increment() {
+        value++; // Thread-safe with synchronized
+    }
+    
+    public synchronized int getValue() {
+        return value;
+    }
+}
+
+class LockCounter {
+    private int value = 0;
+    private final Lock lock = new ReentrantLock();
+    
+    public void increment() {
+        lock.lock();
+        try {
+            value++;
+        } finally {
+            lock.unlock();
+        }
+    }
+    
+    public int getValue() {
+        lock.lock();
+        try {
+            return value;
+        } finally {
+            lock.unlock();
+        }
+    }
+}
+
+class Message {
+    private String message;
+    private boolean empty = true;
+    
+    public synchronized String read() {
+        while (empty) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        empty = true;
+        notifyAll();
+        return message;
+    }
+    
+    public synchronized void write(String message) {
+        while (!empty) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        empty = false;
+        this.message = message;
+        notifyAll();
+    }
+}
+
+class Producer implements Runnable {
+    private Message message;
+    
+    public Producer(Message message) {
+        this.message = message;
+    }
+    
+    @Override
+    public void run() {
+        String[] messages = {"Hello", "World", "Java", "Multithreading"};
+        for (String msg : messages) {
+            message.write(msg);
+            System.out.println("Produced: " + msg);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+}
+
+class Consumer implements Runnable {
+    private Message message;
+    
+    public Consumer(Message message) {
+        this.message = message;
+    }
+    
+    @Override
+    public void run() {
+        for (int i = 0; i < 4; i++) {
+            String msg = message.read();
+            System.out.println("Consumed: " + msg);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+}
+
+class RaceConditionExample {
+    private int counter = 0;
+    
+    public void demonstrateRaceCondition() throws InterruptedException {
+        Thread[] threads = new Thread[10];
+        
+        for (int i = 0; i < 10; i++) {
+            threads[i] = new Thread(() -> {
+                for (int j = 0; j < 1000; j++) {
+                    counter++; // Race condition here
+                }
+            });
+            threads[i].start();
+        }
+        
+        for (Thread thread : threads) {
+            thread.join();
+        }
+        
+        System.out.println("Counter value (with race condition): " + counter);
+        System.out.println("Expected value: 10000");
+    }
+}
+```
+
+---
+
+## Thread States:
+
+1. **NEW**: Thread created but not started
+2. **RUNNABLE**: Thread is executing
+3. **BLOCKED**: Thread blocked waiting for monitor lock
+4. **WAITING**: Thread waiting indefinitely for another thread
+5. **TIMED_WAITING**: Thread waiting for specified time
+6. **TERMINATED**: Thread has completed execution
+
+---
+
+## Synchronization Mechanisms:
+
+### **1. synchronized keyword**
+```java
+// Synchronized method
+public synchronized void method() {
+    // Thread-safe code
+}
+
+// Synchronized block
+public void method() {
+    synchronized (this) {
+        // Thread-safe code
+    }
+}
+```
+
+### **2. ReentrantLock**
+```java
+private final Lock lock = new ReentrantLock();
+
+public void method() {
+    lock.lock();
+    try {
+        // Thread-safe code
+    } finally {
+        lock.unlock();
+    }
+}
+```
+
+### **3. Atomic Classes**
+```java
+private AtomicInteger counter = new AtomicInteger(0);
+
+public void increment() {
+    counter.incrementAndGet(); // Thread-safe
+}
+```
+
+---
+
+## Common Interview Questions & Answers:
+
+### **1. What is the difference between process and thread?**
+- **Process**: Independent execution unit with its own memory space
+- **Thread**: Lightweight process that shares memory with other threads in the same process
+
+### **2. What are the different ways to create a thread?**
+- **Answer**: Extending Thread class, implementing Runnable interface, using lambda expressions, using ExecutorService
+
+### **3. What is the difference between start() and run()?**
+- **start()**: Creates a new thread and calls run() method
+- **run()**: Executes the code in the current thread
+
+### **4. What is synchronization?**
+- **Answer**: Mechanism to control access to shared resources by multiple threads to prevent race conditions
+
+### **5. What is a race condition?**
+- **Answer**: When multiple threads access shared resources simultaneously, leading to unpredictable results
+
+### **6. What is a deadlock?**
+- **Answer**: When two or more threads are blocked forever waiting for each other to release resources
+
+### **7. What is the difference between wait() and sleep()?**
+- **wait()**: Releases the lock and waits for notification
+- **sleep()**: Keeps the lock and sleeps for specified time
+
+### **8. What is the difference between notify() and notifyAll()?**
+- **notify()**: Wakes up one waiting thread
+- **notifyAll()**: Wakes up all waiting threads
+
+### **9. What is a thread pool?**
+- **Answer**: A collection of pre-created threads that can be reused to execute tasks, improving performance
+
+### **10. What are concurrent collections?**
+- **Answer**: Thread-safe collections like ConcurrentHashMap, CopyOnWriteArrayList, BlockingQueue that can be used in multithreaded environments
+
+Ran tool
+## Key Points for Your Interview:
+
+1. **Thread Creation**: Multiple ways - Thread class, Runnable, lambda, ExecutorService
+2. **Synchronization**: synchronized, ReentrantLock, Atomic classes
+3. **Communication**: wait/notify, BlockingQueue, CountDownLatch, CyclicBarrier
+4. **Thread Pools**: Fixed, Cached, Scheduled thread pools
+5. **Concurrent Collections**: Thread-safe alternatives to regular collections
+6. **Common Problems**: Race conditions, deadlocks, and their solutions
+7. **Performance**: Thread pools improve performance by reusing threads
+8. **Best Practices**: Use ExecutorService, avoid synchronized methods when possible
+
+This comprehensive guide covers all the essential multithreading concepts you'll need for your Java interview!

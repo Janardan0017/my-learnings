@@ -1,0 +1,437 @@
+The 4th OOP concept is **Encapsulation**! Let me provide you with a comprehensive explanation following the same detailed format.
+
+Ran tool
+## Encapsulation in Java - Complete Interview Guide
+
+### What is Encapsulation?
+
+**Encapsulation** is the mechanism of wrapping data (variables) and code (methods) together as a single unit and restricting direct access to some of the object's components. It's also known as **Data Hiding**.
+
+### Key Concept:
+- **Bundling data and methods together**
+- **Controlling access to data through methods**
+- **Protecting data from unauthorized access**
+- **"Capsule" - everything inside is protected**
+
+---
+
+## The Four Pillars of OOP:
+
+1. **Inheritance** - "is-a" relationship
+2. **Polymorphism** - "many forms"
+3. **Abstraction** - "hide complexity"
+4. **Encapsulation** - "data hiding" ← **This is the 4th one!**
+
+---
+
+## Key Components of Encapsulation:
+
+### 1. **Data Hiding**
+- Make variables `private`
+- Prevent direct access from outside the class
+
+### 2. **Access Control**
+- Use access modifiers (`private`, `protected`, `public`)
+- Control who can access what
+
+### 3. **Getter and Setter Methods**
+- Provide controlled access to private data
+- Add validation and business logic
+
+---
+
+## Basic Encapsulation Example:
+
+```java
+// Bad example - No encapsulation
+class BadBankAccount {
+    public double balance;  // Direct access - DANGEROUS!
+    public String accountNumber;
+    
+    // Anyone can directly modify balance - NOT SECURE!
+}
+
+// Good example - With encapsulation
+class BankAccount {
+    // Private data - cannot be accessed directly
+    private double balance;
+    private String accountNumber;
+    private String accountHolder;
+    private boolean isActive;
+    
+    // Constructor
+    public BankAccount(String accountNumber, String accountHolder, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.accountHolder = accountHolder;
+        this.balance = initialBalance;
+        this.isActive = true;
+    }
+    
+    // Getter methods - controlled access to read data
+    public double getBalance() {
+        return balance;
+    }
+    
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+    
+    public String getAccountHolder() {
+        return accountHolder;
+    }
+    
+    public boolean isActive() {
+        return isActive;
+    }
+    
+    // Setter methods - controlled access to modify data
+    public void deposit(double amount) {
+        if (amount > 0 && isActive) {
+            balance += amount;
+            System.out.println("Deposited: $" + amount + ". New balance: $" + balance);
+        } else {
+            System.out.println("Invalid deposit amount or account inactive");
+        }
+    }
+    
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance && isActive) {
+            balance -= amount;
+            System.out.println("Withdrawn: $" + amount + ". New balance: $" + balance);
+        } else {
+            System.out.println("Invalid withdrawal amount or insufficient funds");
+        }
+    }
+    
+    public void deactivateAccount() {
+        isActive = false;
+        System.out.println("Account deactivated");
+    }
+    
+    // Business logic method
+    public void displayAccountInfo() {
+        System.out.println("Account: " + accountNumber);
+        System.out.println("Holder: " + accountHolder);
+        System.out.println("Balance: $" + balance);
+        System.out.println("Status: " + (isActive ? "Active" : "Inactive"));
+    }
+}
+
+public class EncapsulationExample {
+    public static void main(String[] args) {
+        // Creating account with encapsulation
+        BankAccount account = new BankAccount("123456789", "John Doe", 1000.0);
+        
+        // Can only access data through methods - SECURE!
+        account.displayAccountInfo();
+        
+        // Valid operations
+        account.deposit(500.0);
+        account.withdraw(200.0);
+        
+        // Invalid operations are handled safely
+        account.withdraw(2000.0);  // Insufficient funds
+        account.deposit(-100.0);   // Invalid amount
+        
+        // Cannot directly access private data
+        // account.balance = 10000;  // This would cause compilation error!
+        
+        System.out.println("Current balance: $" + account.getBalance());
+    }
+}
+```
+
+**Output:**
+```
+Account: 123456789
+Holder: John Doe
+Balance: $1000.0
+Status: Active
+Deposited: $500.0. New balance: $1500.0
+Withdrawn: $200.0. New balance: $1300.0
+Invalid withdrawal amount or insufficient funds
+Invalid deposit amount or account inactive
+Current balance: $1300.0
+```
+
+---
+
+## Advanced Encapsulation Example:
+
+```java
+// Student class with comprehensive encapsulation
+class Student {
+    // Private data members
+    private String name;
+    private int age;
+    private String studentId;
+    private double[] grades;
+    private String email;
+    private boolean isGraduated;
+    
+    // Constructor
+    public Student(String name, int age, String studentId, String email) {
+        this.name = name;
+        this.age = age;
+        this.studentId = studentId;
+        this.email = email;
+        this.grades = new double[5]; // Array for 5 subjects
+        this.isGraduated = false;
+    }
+    
+    // Getter methods
+    public String getName() {
+        return name;
+    }
+    
+    public int getAge() {
+        return age;
+    }
+    
+    public String getStudentId() {
+        return studentId;
+    }
+    
+    public String getEmail() {
+        return email;
+    }
+    
+    public boolean isGraduated() {
+        return isGraduated;
+    }
+    
+    // Controlled setter for age with validation
+    public void setAge(int age) {
+        if (age >= 16 && age <= 100) {
+            this.age = age;
+            System.out.println("Age updated to: " + age);
+        } else {
+            System.out.println("Invalid age. Must be between 16 and 100");
+        }
+    }
+    
+    // Controlled setter for email with validation
+    public void setEmail(String email) {
+        if (email != null && email.contains("@") && email.contains(".")) {
+            this.email = email;
+            System.out.println("Email updated to: " + email);
+        } else {
+            System.out.println("Invalid email format");
+        }
+    }
+    
+    // Method to add grades with validation
+    public void addGrade(int subjectIndex, double grade) {
+        if (subjectIndex >= 0 && subjectIndex < grades.length) {
+            if (grade >= 0.0 && grade <= 100.0) {
+                grades[subjectIndex] = grade;
+                System.out.println("Grade " + grade + " added for subject " + (subjectIndex + 1));
+            } else {
+                System.out.println("Invalid grade. Must be between 0 and 100");
+            }
+        } else {
+            System.out.println("Invalid subject index");
+        }
+    }
+    
+    // Method to get specific grade
+    public double getGrade(int subjectIndex) {
+        if (subjectIndex >= 0 && subjectIndex < grades.length) {
+            return grades[subjectIndex];
+        }
+        return -1; // Indicates invalid index
+    }
+    
+    // Method to calculate average grade
+    public double calculateAverage() {
+        double sum = 0;
+        int count = 0;
+        for (double grade : grades) {
+            if (grade > 0) { // Only count grades that have been set
+                sum += grade;
+                count++;
+            }
+        }
+        return count > 0 ? sum / count : 0;
+    }
+    
+    // Method to check if student can graduate
+    public boolean canGraduate() {
+        double average = calculateAverage();
+        return average >= 70.0 && !isGraduated;
+    }
+    
+    // Method to graduate student
+    public void graduate() {
+        if (canGraduate()) {
+            isGraduated = true;
+            System.out.println("Congratulations! " + name + " has graduated!");
+        } else {
+            System.out.println("Cannot graduate. Average grade: " + calculateAverage() + " (Minimum required: 70.0)");
+        }
+    }
+    
+    // Method to display student information
+    public void displayStudentInfo() {
+        System.out.println("=== Student Information ===");
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Student ID: " + studentId);
+        System.out.println("Email: " + email);
+        System.out.println("Average Grade: " + calculateAverage());
+        System.out.println("Status: " + (isGraduated ? "Graduated" : "Active Student"));
+        System.out.println("Grades: ");
+        for (int i = 0; i < grades.length; i++) {
+            if (grades[i] > 0) {
+                System.out.println("  Subject " + (i + 1) + ": " + grades[i]);
+            }
+        }
+    }
+}
+
+public class AdvancedEncapsulationExample {
+    public static void main(String[] args) {
+        // Creating student with encapsulation
+        Student student = new Student("Alice Johnson", 20, "STU001", "alice@university.edu");
+        
+        // Display initial information
+        student.displayStudentInfo();
+        System.out.println();
+        
+        // Adding grades
+        student.addGrade(0, 85.5);  // Math
+        student.addGrade(1, 92.0);  // Science
+        student.addGrade(2, 78.5);  // English
+        student.addGrade(3, 88.0);  // History
+        student.addGrade(4, 95.0);  // Computer Science
+        
+        System.out.println();
+        student.displayStudentInfo();
+        System.out.println();
+        
+        // Try to graduate
+        student.graduate();
+        System.out.println();
+        
+        // Try invalid operations
+        student.addGrade(5, 90.0);  // Invalid subject index
+        student.addGrade(0, 150.0); // Invalid grade
+        student.setAge(15);         // Invalid age
+        student.setEmail("invalid-email"); // Invalid email
+        
+        System.out.println();
+        student.displayStudentInfo();
+    }
+}
+```
+
+---
+
+## Access Modifiers in Encapsulation:
+
+```java
+public class AccessModifiersExample {
+    // Public - accessible from anywhere
+    public String publicVariable = "Anyone can access";
+    
+    // Protected - accessible within package and subclasses
+    protected String protectedVariable = "Package and subclasses can access";
+    
+    // Default (package-private) - accessible within same package
+    String defaultVariable = "Same package can access";
+    
+    // Private - accessible only within same class
+    private String privateVariable = "Only this class can access";
+    
+    // Public method
+    public void publicMethod() {
+        System.out.println("Public method - accessible from anywhere");
+    }
+    
+    // Protected method
+    protected void protectedMethod() {
+        System.out.println("Protected method - package and subclasses");
+    }
+    
+    // Default method
+    void defaultMethod() {
+        System.out.println("Default method - same package");
+    }
+    
+    // Private method
+    private void privateMethod() {
+        System.out.println("Private method - only this class");
+    }
+    
+    // Method to access private variable
+    public String getPrivateVariable() {
+        return privateVariable;
+    }
+    
+    // Method to modify private variable
+    public void setPrivateVariable(String value) {
+        this.privateVariable = value;
+    }
+}
+```
+
+---
+
+## Common Interview Questions & Answers:
+
+### **1. What is encapsulation in Java?**
+- **Answer**: Wrapping data and methods together as a single unit and restricting direct access to data. It's also called data hiding.
+
+### **2. How do you achieve encapsulation?**
+- **Answer**: 
+  - Make variables `private`
+  - Provide `public` getter and setter methods
+  - Add validation in setter methods
+
+### **3. What are the benefits of encapsulation?**
+- **Answer**: 
+  - Data security and integrity
+  - Controlled access to data
+  - Easier maintenance and testing
+  - Flexibility to change implementation
+
+### **4. What is the difference between encapsulation and abstraction?**
+- **Encapsulation**: Hiding data and implementation details
+- **Abstraction**: Hiding complexity and showing only essential features
+
+### **5. Can you access private variables directly?**
+- **Answer**: No, private variables can only be accessed within the same class. Use getter methods to access them.
+
+### **6. What are getter and setter methods?**
+- **Getter**: Method to read private data
+- **Setter**: Method to modify private data with validation
+
+### **7. Why use private variables with public methods?**
+- **Answer**: To maintain data integrity and provide controlled access with validation.
+
+### **8. What is data hiding?**
+- **Answer**: Making data private to prevent unauthorized access and modification.
+
+### **9. Can you have private methods?**
+- **Answer**: Yes, private methods can only be called within the same class.
+
+### **10. What is the main purpose of encapsulation?**
+- **Answer**: To protect data from unauthorized access and maintain data integrity.
+
+Ran tool
+## Key Points for Your Interview:
+
+1. **Definition**: Wrapping data and methods together, controlling access to data
+2. **Purpose**: Data security, integrity, and controlled access
+3. **Implementation**: Private variables + public getter/setter methods
+4. **Benefits**: Security, maintainability, flexibility
+5. **Real-world**: Think of bank accounts, student records, or any system with sensitive data
+
+## Summary of All 4 OOP Concepts:
+
+1. **Inheritance** - "is-a" relationship (Car IS-A Vehicle)
+2. **Polymorphism** - "many forms" (same method, different behaviors)
+3. **Abstraction** - "hide complexity" (show what, hide how)
+4. **Encapsulation** - "data hiding" (protect data, control access)
+
+This comprehensive guide covers all the essential encapsulation concepts you'll need for your Java interview. The examples show both basic and advanced encapsulation with real-world scenarios like bank accounts and student management systems!
