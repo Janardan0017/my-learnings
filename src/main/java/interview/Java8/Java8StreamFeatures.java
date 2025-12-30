@@ -1,4 +1,4 @@
-package interview.Java8;
+package interview.java8;
 
 import java.util.ArrayList;
 import java.util.Arrays;
