@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
-import custom.classess.TreeNode;
+import customclassess.TreeNode;
 
 /**
  * Created for interview-preparation on 4/12/20
@@ -46,10 +46,12 @@ public class PreOrderTraversal {
             TreeNode<Integer> pop = stack.pop();
             System.out.print(pop.val + " ");
             //push the right node before left because you will need that node after popping the left node
-            if (pop.right != null)
+            if (pop.right != null) {
                 stack.push(pop.right);
-            if (pop.left != null)
+            }
+            if (pop.left != null) {
                 stack.push(pop.right);
+            }
         }
     }
 }

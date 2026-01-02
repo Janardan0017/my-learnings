@@ -1,7 +1,8 @@
 package leetcode;
 
-import custom.classess.TreeNode;
 import java.util.Stack;
+
+import customclassess.TreeNode;
 
 public class Problem236 {
 
@@ -19,16 +20,16 @@ public class Problem236 {
         stack.push(root);
         while (pStack == null || qStack == null) {
             TreeNode peek = stack.peek();
-            if(pStack == null && peek.val == p.val) {
+            if (pStack == null && peek.val == p.val) {
                 pStack = new Stack<>();
                 pStack.addAll(stack);
-            } else if(qStack == null && peek.val == q.val) {
+            } else if (qStack == null && peek.val == q.val) {
                 qStack = new Stack<>();
                 qStack.addAll(stack);
             }
-            if(peek.left == null && peek.right == null) {
+            if (peek.left == null && peek.right == null) {
                 stack.pop();
-            } else if(peek.left != null) {
+            } else if (peek.left != null) {
                 stack.push(peek.left);
             } else {
                 stack.push(peek.right);
@@ -40,26 +41,26 @@ public class Problem236 {
     }
 
     public void preOrder(TreeNode root, Stack<TreeNode> pStack, Stack<TreeNode> qStack) {
-        if(root == null) {
+        if (root == null) {
             return;
         }
         Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
-        while(!stack.isEmpty()) {
+        while (!stack.isEmpty()) {
             TreeNode peek = stack.peek();
             System.out.println(peek.val);
             stack.pop();
-            if(peek.right != null) {
+            if (peek.right != null) {
                 stack.push(peek.right);
             }
-            if(peek.left != null) {
+            if (peek.left != null) {
                 stack.push(peek.left);
             }
         }
     }
 
     public void preOrder2(TreeNode root, Stack<TreeNode> pStack, Stack<TreeNode> qStack) {
-        if(root == null) {
+        if (root == null) {
             return;
         }
         preOrder(root.left, pStack, qStack);

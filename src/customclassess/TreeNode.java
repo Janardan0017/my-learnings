@@ -1,4 +1,4 @@
-package custom.classess;
+package customclassess;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -12,7 +12,7 @@ public class TreeNode<T> {
     public TreeNode<T> right;
 
     public TreeNode() {
-        
+
     }
 
     public TreeNode(T v) {
@@ -33,8 +33,12 @@ public class TreeNode<T> {
         return String.join("\n", lines);
     }
 
+    public void print() {
+        System.out.println(this.toString());
+    }
+
     // Recursive sideways printer using per-level widths
-    void printTree(TreeNode<T> root, int space, int level, List<Integer> widths, List<String> lines) {
+    private void printTree(TreeNode<T> root, int space, int level, List<Integer> widths, List<String> lines) {
         if (root == null) {
             return;
         }
@@ -53,13 +57,13 @@ public class TreeNode<T> {
     }
 
     // Pad string to fixed width, centered
-    String padLeft(T s, int width) {
+    private String padLeft(T s, int width) {
         int pad = width - String.valueOf(s).length();
         return s + " ".repeat(pad);
     }
 
     // Collect max width per level
-    List<Integer> calculateMaxWidthPerLevel(TreeNode<T> root) {
+    private List<Integer> calculateMaxWidthPerLevel(TreeNode<T> root) {
         List<Integer> widths = new ArrayList<>();
         if (root == null) {
             return widths;

@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.Random;
 
-import custom.classess.TreeNode;
+import customclassess.TreeNode;
 
 /**
  * Created for interview-preparation on 3/12/20
@@ -23,8 +23,8 @@ public class Problem897 {
             root = new TreeNode(val);
         }
         if (val < root.val) {
-            insertIntoBST(root.left, val); 
-        }else if (val > root.val) {
+            insertIntoBST(root.left, val);
+        } else if (val > root.val) {
             insertIntoBST(root.right, val);
         }
         return root;

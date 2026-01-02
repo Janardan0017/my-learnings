@@ -1,6 +1,6 @@
 package leetcode;
 
-import custom.classess.TreeNode;
+import customclassess.TreeNode;
 
 public class Problem114 {
 
@@ -10,11 +10,11 @@ public class Problem114 {
     }
 
     public static void flatten(TreeNode root) {
-        if(root == null) {
+        if (root == null) {
             return;
         }
         flatten(root.left);
-        
+
         flatten(root.right);
     }
 }

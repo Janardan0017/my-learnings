@@ -1,6 +1,6 @@
 package leetcode;
 
-import custom.classess.TreeNode;
+import customclassess.TreeNode;
 
 public class Problem617 {
 
@@ -12,6 +12,7 @@ public class Problem617 {
         // System.out.println(treeNode);
     }
     TreeNode root;
+
     public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
         root = merge(root1, root2);
         root.left = merge(root1.left, root2.left);
@@ -29,7 +30,6 @@ public class Problem617 {
         } else {
             return new TreeNode(root1.val + root2.val);
         }
-
 
 //        if(root1 == null && root2 == null) {
 //            root = null;

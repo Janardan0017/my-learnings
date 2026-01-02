@@ -1,8 +1,9 @@
 package leetcode;
 
-import custom.classess.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
+
+import customclassess.TreeNode;
 
 public class Problem100 {
 

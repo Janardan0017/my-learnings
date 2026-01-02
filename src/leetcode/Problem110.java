@@ -1,6 +1,6 @@
 package leetcode;
 
-import custom.classess.TreeNode;
+import customclassess.TreeNode;
 
 /**
  * Created for interview-preparation on 2/12/20

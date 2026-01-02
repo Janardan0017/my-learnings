@@ -1,16 +1,18 @@
 package leetcode;
 
-import custom.classess.TreeNode;
+import customclassess.TreeNode;
 
 public class Problem938 {
 
     public int sum;
 
     public int rangeSumBST(TreeNode<Integer> root, int L, int R) {
-        if (root == null)
+        if (root == null) {
             return 0;
-        if (root.val >= L && root.val <= R)
+        }
+        if (root.val >= L && root.val <= R) {
             sum += root.val;
+        }
         rangeSumBST(root.left, L, R);
         rangeSumBST(root.right, L, R);
         return sum;
@@ -30,8 +32,9 @@ public class Problem938 {
     }
 
     public static void print(TreeNode root) {
-        if (root == null)
+        if (root == null) {
             return;
+        }
         print(root.left);
         System.out.println(root.val);
         print(root.right);

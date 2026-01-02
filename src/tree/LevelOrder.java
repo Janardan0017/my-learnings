@@ -2,7 +2,7 @@ package tree;
 
 import java.util.LinkedList;
 
-import custom.classess.TreeNode;
+import customclassess.TreeNode;
 
 public class LevelOrder {
 
@@ -13,8 +13,9 @@ public class LevelOrder {
     }
 
     public static void levelOrder(TreeNode<Integer> root) {
-        if (root == null)
+        if (root == null) {
             return;
+        }
         LinkedList<TreeNode<Integer>> linkedList = new LinkedList<>();
         LinkedList<Integer> level = new LinkedList<>();
         linkedList.add(root);
@@ -44,8 +45,9 @@ public class LevelOrder {
     }
 
     public static int getHeight(TreeNode<Integer> root) {
-        if (root == null)
+        if (root == null) {
             return 0;
+        }
         LinkedList<TreeNode<Integer>> linkedList = new LinkedList<>();
         LinkedList<Integer> level = new LinkedList<>();
         linkedList.add(root);

@@ -1,6 +1,6 @@
 package leetcode;
 
-import custom.classess.TreeNode;
+import customclassess.TreeNode;
 
 public class Problem101 {
 
