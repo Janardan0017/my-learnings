@@ -1,4 +1,4 @@
-package madeeasy.stack;
+package stack;
 
 import java.util.Stack;
 

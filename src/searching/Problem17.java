@@ -1,4 +1,4 @@
-package madeeasy.searching;
+package searching;
 
 public class Problem17 {
 

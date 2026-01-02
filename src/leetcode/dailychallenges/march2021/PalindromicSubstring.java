@@ -1,3 +1,5 @@
+package leetcode.dailychallenges.march2021;
+
 import java.util.Scanner;
 
 public class PalindromicSubstring {

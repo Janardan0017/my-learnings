@@ -1,4 +1,4 @@
-package madeeasy.linkedlist;
+package linkedlist;
 
 import java.util.List;
 import java.util.stream.Collectors;

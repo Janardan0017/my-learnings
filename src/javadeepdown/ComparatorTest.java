@@ -1,10 +1,13 @@
+package javadeepdown;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
 public class ComparatorTest {
     public static void main(String[] args) {
 
-        Comparator<int[]> comp = new Comparator<>() {
+        Comparator<int[]> comp = new Comparator<int[]>() {
+            @Override
             public int compare(int[] a, int[] b) {
                 int first = a[0] - b[0];
                 return first == 0 ? a[1] - b[1] : first;

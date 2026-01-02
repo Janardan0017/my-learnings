@@ -1,4 +1,4 @@
-package madeeasy.RecursionAndBacktracking;
+package recursionandbacktracking;
 
 public class Permutation {
 

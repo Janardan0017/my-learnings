@@ -1,4 +1,4 @@
-package madeeasy.RecursionAndBacktracking;
+package recursionandbacktracking;
 
 import java.util.Arrays;
 import java.util.Collections;

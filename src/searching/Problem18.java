@@ -1,4 +1,4 @@
-package madeeasy.searching;
+package searching;
 
 import java.util.Arrays;
 
